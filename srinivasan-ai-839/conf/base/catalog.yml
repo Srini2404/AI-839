@@ -2,3 +2,23 @@
 #
 # Documentation for this file format can be found in "The Data Catalog"
 # Link: https://docs.kedro.org/en/stable/data/data_catalog.html
+
+dataset_id_214:
+  type: pandas.CSVDataset
+  filepath: data/01_raw/dataset_id_214.csv
+  # load_args:
+
+
+preprocessed_data:
+  type: pandas.CSVDataset
+  filepath: data/02_modelinput/preprocessed_data.csv
+  save_args:
+    index: True
+
+classifier_model:
+  type: pickle.PickleDataset
+  filepath: data/06_models/classifier_model.pkl
+  # load_args:
+  # save_args:
+  #   pickle_protocol: 3
+  versioned: true
