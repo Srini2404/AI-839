@@ -9,5 +9,6 @@ from .nodes import preprocess_data
 
 def create_pipeline(**kwargs) -> Pipeline:
     return pipeline([
-        node(func=preprocess_data,inputs='dataset_id_214',outputs='pre-processed_data',name='pre-processed_data_node')
+        node(func=preprocess_data,inputs='dataset_id_214',
+            outputs='preprocessed_data',name='preprocessed_data_node')
     ])
