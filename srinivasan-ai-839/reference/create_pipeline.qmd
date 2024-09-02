@@ -1,0 +1,13 @@
+# create_pipeline { #srinivasan_ai_839.create_pipeline }
+
+`create_pipeline(**kwargs)`
+
+Creates a data processing pipeline.
+
+This pipeline consists of a single node that preprocesses the data from the input dataset.
+
+Parameters:
+**kwargs: Additional keyword arguments.
+
+Returns:
+Pipeline: A Kedro pipeline object with the defined nodes.

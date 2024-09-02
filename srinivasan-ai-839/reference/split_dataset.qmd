@@ -1,0 +1,11 @@
+# split_dataset { #srinivasan_ai_839.split_dataset }
+
+`split_dataset(dataset)`
+
+Splits the dataset into training and testing sets for features and target.
+
+Parameters:
+dataset (pd.DataFrame): The dataset to be split.
+
+Returns:
+t.Tuple[pd.DataFrame, pd.DataFrame, pd.Series, pd.Series]: A tuple containing the training features, testing features, training target, and testing target.

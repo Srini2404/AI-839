@@ -1,0 +1,12 @@
+# train_model { #srinivasan_ai_839.train_model }
+
+`train_model(X_train, Y_train)`
+
+Trains a RandomForestClassifier model using the provided training data.
+
+Parameters:
+X_train (pd.DataFrame): The training features.
+Y_train (pd.Series): The training target.
+
+Returns:
+RandomForestClassifier: The trained RandomForestClassifier model.

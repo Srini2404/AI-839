@@ -7,7 +7,6 @@ from pathlib import Path
 from kedro.framework.cli.utils import KedroCliError, load_entry_points
 from kedro.framework.project import configure_project
 
-
 def _find_run_command(package_name):
     try:
         project_cli = importlib.import_module(f"{package_name}.cli")

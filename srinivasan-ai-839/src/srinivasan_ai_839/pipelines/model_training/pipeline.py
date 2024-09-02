@@ -8,13 +8,38 @@ from kedro.pipeline import Pipeline, pipeline,node
 from .nodes import split_dataset,train_model,evaluate_model
 
 def create_pipeline(**kwargs) -> Pipeline:
-    pipeline_instance =  pipeline([
-        node(func=split_dataset,inputs="preprocessed_data",outputs=["X_train","X_test","Y_train","Y_test"],name="split_data_node"),
-        node(func=train_model,inputs=["X_train","Y_train"],outputs="classifier_model",name="train_model_node"),
-        node(func=evaluate_model,inputs=["classifier_model","X_test","Y_test"],outputs=None,name="evaluate_model_node")
+    """
+    Creates a machine learning pipeline.
+
+    This pipeline consists of three nodes:
+    1. Splitting the preprocessed data into training and testing sets.
+    2. Training a RandomForestClassifier model using the training data.
+    3. Evaluating the trained model using the testing data.
+
+    Parameters:
+    **kwargs: Additional keyword arguments.
+
+    Returns:
+    Pipeline: A Kedro pipeline object with the defined nodes.
+    """
+    pipeline_instance = pipeline([
+        node(
+            func=split_dataset,
+            inputs="preprocessed_data",
+            outputs=["X_train", "X_test", "Y_train", "Y_test"],
+            name="split_data_node"
+        ),
+        node(
+            func=train_model,
+            inputs=["X_train", "Y_train"],
+            outputs="classifier_model",
+            name="train_model_node"
+        ),
+        node(
+            func=evaluate_model,
+            inputs=["classifier_model", "X_test", "Y_test"],
+            outputs=None,
+            name="evaluate_model_node"
+        )
     ])
     return pipeline_instance
-    # ds_pipeline_1 = pipeline(pipe=pipeline_instance,inputs="preprocessed_data",namespace="active_model_namespace")
-    # ds_pipeline_2 = pipeline(pipe=pipeline_instance,inputs="preprocessed_data",namespace="candidate_model_namespace")
-    # return ds_pipeline_1+ds_pipeline_2
-
