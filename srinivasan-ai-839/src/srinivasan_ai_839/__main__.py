@@ -1,11 +1,13 @@
 """Srinivasan-ai-839 file for ensuring the package is executable
 as `srinivasan-ai-839` and `python -m srinivasan_ai_839`
 """
+
 import importlib
 from pathlib import Path
 
 from kedro.framework.cli.utils import KedroCliError, load_entry_points
 from kedro.framework.project import configure_project
+
 
 def _find_run_command(package_name):
     try:

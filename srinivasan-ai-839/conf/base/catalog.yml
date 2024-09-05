@@ -22,3 +22,15 @@ classifier_model:
   # save_args:
   #   pickle_protocol: 3
   versioned: true
+
+
+data_drift_plot:
+  type: plotly.JSONDataset
+  filepath: data/08_reporting/data_drift_plot.json
+  # versioned: true
+  # plotly_args:
+  #   to_json: True 
+
+target_plot:
+  type: plotly.JSONDataset
+  filepath: data/08_reporting/target_plot.json

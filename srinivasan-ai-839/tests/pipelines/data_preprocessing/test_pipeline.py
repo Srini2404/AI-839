@@ -10,6 +10,20 @@ https://docs.pytest.org/en/latest/getting-started.html
 from kedro.framework.session import KedroSession
 from kedro.framework.startup import bootstrap_project
 from pathlib import Path
+
+from evidently.test_suite import TestSuite
+from evidently.tests import (
+    TestNumberOfColumnsWithMissingValues,
+    TestNumberOfRowsWithMissingValues,
+    TestNumberOfConstantColumns,
+    TestNumberOfDuplicatedRows,
+    TestNumberOfDuplicatedColumns,
+    TestColumnsType,
+    TestNumberOfDriftedColumns,
+)
+from evidently import ColumnMapping
+import plotly.graph_objects as go
+
 # from kedro.framework.session.session import get_current_session
 import pandas as pd
 from srinivasan_ai_839.pipelines.data_preprocessing.nodes import (
@@ -381,25 +395,5 @@ def test_preprocess_data():
         assert (
             processed_data[col].dtype != "object"
         ), f"Column {col} is of type object, but it should be transformed to numerical type."
-
-
-# def test_data_preprocessed_pipleine(caplog):
-#     bootstrap_project(Path("../../../."))
-#     logging.basicConfig(level=logging.DEBUG)
-#     with KedroSession.create() as session:
-#         context = session.load_context()  # Load the Kedro context
-#         caplog.set_level(logging.DEBUG, logger="kedro")
-#         catalog = context.catalog  # Access the catalog automatically configured
-#         pipeline = (
-#             create_pipeline_dp()
-#             .from_nodes("preprocessed_data_node")
-#         )
-        
-#         successful_run_msg = "Pipeline execution completed successfully."
-#         # pipeline = create_pipeline()  # Replace with your pipeline creation logic
-#         runner = SequentialRunner()
-#         runner.run(pipeline, catalog)
-#         print(caplog.messages)
-#         assert any(successful_run_msg in message for message in caplog.messages)
 
 

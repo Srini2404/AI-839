@@ -5,7 +5,9 @@ generated using Kedro 0.19.7
 
 from kedro.pipeline import Pipeline, pipeline, node
 
-from .nodes import preprocess_data
+# from .nodes import preprocess_data
+
+from .nodes import preprocess_and_drift_checks
 
 def create_pipeline(**kwargs) -> Pipeline:
     """
@@ -19,11 +21,13 @@ def create_pipeline(**kwargs) -> Pipeline:
     Returns:
     Pipeline: A Kedro pipeline object with the defined nodes.
     """
-    return pipeline([
-        node(
-            func=preprocess_data,
-            inputs='dataset_id_214',
-            outputs='preprocessed_data',
-            name='preprocessed_data_node'
-        )
-    ])
+    return pipeline(
+        [
+            node(
+                func=preprocess_and_drift_checks,
+                inputs="dataset_id_214",
+                outputs=["preprocessed_data","data_drift_plot","target_plot"],
+                name="preprocessed_data_node",
+            )
+        ]
+    )
