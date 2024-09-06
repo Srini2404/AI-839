@@ -9,9 +9,51 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, r2_score
 import typing as t
+from evidently import ColumnMapping
+from evidently.report import Report
+from evidently.metrics import DataDriftTable
 
 # Configure logger
 logger = logging.getLogger(__name__)
+
+
+def check_for_data_drift(y_train: pd.Series, y_test: pd.Series) -> None:
+    """
+    Checks for data drift between training and testing target variables using Evidently.
+
+    Parameters:
+    y_train (pd.Series): The target variable from the training set.
+    y_test (pd.Series): The target variable from the testing set.
+
+    Raises:
+    ValueError: If drift is detected between the distributions of y_train and y_test.
+    """
+    # Create a DataFrame with the target columns
+    df_train = pd.DataFrame({"y": y_train})
+    df_test = pd.DataFrame({"y": y_test})
+
+    # Define column mapping for Evidently
+    column_mapping = ColumnMapping(target="y")
+
+    # Create a data drift report
+    report = Report(metrics=[DataDriftTable()])
+    report.run(
+        reference_data=df_train, current_data=df_test, column_mapping=column_mapping
+    )
+
+    # Extract the drift report
+    drift_report = report.as_dict()
+    # Check if drift was detected
+    drift_detected = drift_report["metrics"][0]["result"]["drift_by_columns"]["y"][
+        "drift_detected"
+    ]
+    # print("drift_detected_metrics")
+    if drift_detected:
+        raise ValueError(
+            "Data drift detected between training and testing target variables."
+        )
+    else:
+        print("No data drift detected.")
 
 
 def split_dataset(

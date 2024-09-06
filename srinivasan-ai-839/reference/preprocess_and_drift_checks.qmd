@@ -1,0 +1,11 @@
+# preprocess_and_drift_checks { #srinivasan_ai_839.preprocess_and_drift_checks }
+
+`preprocess_and_drift_checks(df)`
+
+Preprocesses the data and performs data drift quality checks.
+
+Args:
+    df: A pandas DataFrame containing the data to be processed and checked for drift.
+
+Returns:
+    tuple: A tuple containing the preprocessed data DataFrame, drift plot, and target plot.

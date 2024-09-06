@@ -5,23 +5,23 @@ generated using Kedro 0.19.8
 
 from kedro.pipeline import Pipeline, pipeline, node
 
-from .nodes import split_dataset, train_model, evaluate_model
+from .nodes import split_dataset, train_model, evaluate_model, check_for_data_drift
 
 
 def create_pipeline(**kwargs) -> Pipeline:
     """
-    Creates a machine learning pipeline.
+    Create a machine learning pipeline with data splitting, model training, and evaluation nodes.
 
-    This pipeline consists of three nodes:
-    1. Splitting the preprocessed data into training and testing sets.
-    2. Training a RandomForestClassifier model using the training data.
-    3. Evaluating the trained model using the testing data.
+    The pipeline includes the following steps:
+    1. Split the preprocessed data into training and testing sets.
+    2. Check for data drift between training and testing sets.
+    3. Train a RandomForestClassifier model using the training data.
 
     Parameters:
-    **kwargs: Additional keyword arguments.
+    **kwargs: Additional keyword arguments for pipeline configuration.
 
     Returns:
-    Pipeline: A Kedro pipeline object with the defined nodes.
+    Pipeline: A Kedro pipeline object containing the defined nodes.
     """
     pipeline_instance = pipeline(
         [
@@ -30,6 +30,12 @@ def create_pipeline(**kwargs) -> Pipeline:
                 inputs="preprocessed_data",
                 outputs=["X_train", "X_test", "Y_train", "Y_test"],
                 name="split_data_node",
+            ),
+            node(
+                func=check_for_data_drift,
+                inputs=["Y_train", "Y_test"],
+                outputs=None,
+                name="data_drift_node",
             ),
             node(
                 func=train_model,
