@@ -8,7 +8,7 @@ from kedro.pipeline import Pipeline, pipeline, node
 from .nodes import split_dataset, train_model, evaluate_model, check_for_data_drift
 
 
-def create_pipeline(**kwargs) -> Pipeline:
+def create_pipeline(**kwargs):
     """
     Create a machine learning pipeline with data splitting, model training, and evaluation nodes.
 
@@ -23,32 +23,40 @@ def create_pipeline(**kwargs) -> Pipeline:
     Returns:
     Pipeline: A Kedro pipeline object containing the defined nodes.
     """
-    pipeline_instance = pipeline(
+    pipeline_train = pipeline(
         [
             node(
                 func=split_dataset,
                 inputs="preprocessed_data",
                 outputs=["X_train", "X_test", "Y_train", "Y_test"],
                 name="split_data_node",
+                tags=["training"]
             ),
             node(
                 func=check_for_data_drift,
                 inputs=["Y_train", "Y_test"],
                 outputs=None,
                 name="data_drift_node",
+                tags=["training"]
             ),
             node(
                 func=train_model,
                 inputs=["X_train", "Y_train"],
                 outputs="classifier_model",
                 name="train_model_node",
+                tags=["training"]
             ),
-            node(
+        ]
+    )
+    pipeline_inference = pipeline(
+        [
+                node(
                 func=evaluate_model,
                 inputs=["classifier_model", "X_test", "Y_test"],
                 outputs=None,
                 name="evaluate_model_node",
+                tags=["inference"]
             ),
         ]
     )
-    return pipeline_instance
+    return (pipeline_train+pipeline_inference)

@@ -71,6 +71,7 @@ def preprocess_data(df: pd.DataFrame) -> pd.DataFrame:
     """
     # convert all object columns to categorical values.
     df_processed = pd.get_dummies(df, drop_first=False)
+    df_processed.to_csv("C:\\Users\\Admin\\Desktop\\Semester_7\\MLOps\\AI-839\\srinivasan-ai-839\\data\\01_raw\\pre_processed.csv",index=False)
     return df_processed
 
 

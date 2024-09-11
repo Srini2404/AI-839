@@ -11,17 +11,22 @@ dataset_id_214:
 
 preprocessed_data:
   type: pandas.CSVDataset
-  filepath: data/02_modelinput/preprocessed_data.csv
+  filepath: data\\02_modelinput\\preprocessed_data.csv
   save_args:
     index: True
 
 classifier_model:
-  type: pickle.PickleDataset
-  filepath: data/06_models/classifier_model.pkl
+  type:  kedro_mlflow.io.artifacts.MlflowArtifactDataset
+  # filepath: data/06_models/classifier_model.pkl
+  dataset:
+    # type: pickle.PickleDataset
+    type: kedro_mlflow.io.models.MlflowModelLocalFileSystemDataset
+    flavor: mlflow.sklearn
+    filepath: data\\06_models\\classifier_model.pkl
   # load_args:
   # save_args:
   #   pickle_protocol: 3
-  versioned: true
+  # versioned: true
 
 
 data_drift_plot:

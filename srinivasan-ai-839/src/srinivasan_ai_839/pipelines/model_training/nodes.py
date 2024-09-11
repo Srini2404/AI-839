@@ -10,6 +10,10 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, r2_score
 import typing as t
 from evidently import ColumnMapping
+import os
+import mlflow
+from mlflow import sklearn
+from datetime import datetime
 from evidently.report import Report
 from evidently.metrics import DataDriftTable
 
@@ -96,10 +100,12 @@ def train_model(X_train: pd.DataFrame, Y_train: pd.Series) -> RandomForestClassi
     """
     # Initialize the model
     model = RandomForestClassifier(random_state=42)
-
+    # mlflow.log_artifact("C:\\Users\\Admin\\Desktop\\Semester_7\\MLOps\\AI-839\\srinivasan-ai-839\\data\\01_raw\\dataset_id_214.csv")
+    mlflow.log_artifact(local_path=os.path.join("data", "02_modelinput", "preprocessed_data.csv"))
     # Train the model
     model.fit(X_train, Y_train)
-
+    # model = np.vstack(weights).transpose()
+    sklearn.log_model(sk_model=model, artifact_path="model")
     return model
 
 
@@ -122,6 +128,9 @@ def evaluate_model(
 
     # Calculate accuracy
     accuracy = accuracy_score(Y_test, Y_pred)
-
+    mlflow.log_metric("accuracy", accuracy)
+    mlflow.log_param("time of prediction", str(datetime.now()))
+    mlflow.set_tag("Initial kedro-mlfow","9th September")
     # Log the accuracy
-    logger.info(f"Model has an accuracy of {accuracy:.2f}")
+    # logger.info(f"Model has an accuracy of {accuracy:.2f}")
+    print(f"The accuracy score is: {accuracy}")
