@@ -16,7 +16,9 @@ def create_pipeline(**kwargs):
     1. Split the preprocessed data into training and testing sets.
     2. Check for data drift between training and testing sets.
     3. Train a RandomForestClassifier model using the training data.
+    4. Give the nodes necessary tags such as training and inference based on the work the nodes do.
 
+    
     Parameters:
     **kwargs: Additional keyword arguments for pipeline configuration.
 
