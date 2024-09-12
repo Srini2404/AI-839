@@ -8,12 +8,30 @@ dataset_id_214:
   filepath: data/01_raw/dataset_id_214.csv
   # load_args:
 
+inference_data:
+  type: pandas.CSVDataset
+  filepath: data\\01_raw\\sampled_file.csv
+  # load_args:
+  # save_args:
+  #   index: True
+
+encoder:
+  type: pickle.PickleDataset
+  filepath: data/03_primary/encoder.pkl
+  # load_args:
+  # save_args:
+  #   pickle_protocol: 3
+  # versioned: true
 
 preprocessed_data:
   type: pandas.CSVDataset
   filepath: data\\02_modelinput\\preprocessed_data.csv
   save_args:
     index: True
+
+model2:
+  type: pickle.PickleDataset
+  filepath: data/06_models/model2.pkl
 
 classifier_model:
   type:  kedro_mlflow.io.artifacts.MlflowArtifactDataset

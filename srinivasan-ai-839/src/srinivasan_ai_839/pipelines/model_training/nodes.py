@@ -129,7 +129,6 @@ def evaluate_model(
     """
     # Predict the target for test data
     Y_pred = model.predict(X_test)
-
     # Calculate accuracy
     accuracy = accuracy_score(Y_test, Y_pred)
     mlflow.log_metric("accuracy", accuracy)

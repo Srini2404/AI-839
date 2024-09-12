@@ -44,7 +44,7 @@ def create_pipeline(**kwargs):
             node(
                 func=train_model,
                 inputs=["X_train", "Y_train"],
-                outputs="classifier_model",
+                outputs="model2",
                 name="train_model_node",
                 tags=["training"]
             ),
@@ -54,7 +54,7 @@ def create_pipeline(**kwargs):
         [
                 node(
                 func=evaluate_model,
-                inputs=["classifier_model", "X_test", "Y_test"],
+                inputs=["model2", "X_test", "Y_test"],
                 outputs=None,
                 name="evaluate_model_node",
                 tags=["inference"]

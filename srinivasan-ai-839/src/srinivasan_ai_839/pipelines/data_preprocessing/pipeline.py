@@ -27,7 +27,7 @@ def create_pipeline(**kwargs) -> Pipeline:
             node(
                 func=preprocess_and_drift_checks,
                 inputs="dataset_id_214",
-                outputs=["preprocessed_data", "data_drift_plot", "target_plot"],
+                outputs=["preprocessed_data", "data_drift_plot", "target_plot","encoder"],
                 name="preprocessed_data_node",
             )
         ]

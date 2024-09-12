@@ -5,8 +5,9 @@ generated using Kedro 0.19.7
 
 import pandas as pd
 from sklearn.model_selection import train_test_split
-
+from sklearn.preprocessing import OneHotEncoder
 from evidently.report import Report
+from typing import Tuple
 from evidently.metric_preset import DataDriftPreset, TargetDriftPreset
 from evidently.test_suite import TestSuite
 from evidently.tests import (
@@ -51,28 +52,72 @@ def preprocess_and_drift_checks(df: pd.DataFrame):
     Returns:
         tuple: A tuple containing the preprocessed data DataFrame, drift plot, and target plot.
     """ 
-    preprocessed_data = preprocess_data(df)
+    preprocessed_data,encoder= preprocess_data(df)
     print("Hello World!")
     target_plot = data_drift_quality_checks_new(df)
     drift_plot = data_drift_quality_checks(df)
 
-    return preprocessed_data, drift_plot, target_plot
+    return preprocessed_data,drift_plot, target_plot,encoder
 
 
-def preprocess_data(df: pd.DataFrame) -> pd.DataFrame:
+
+
+def preprocess_data(df: pd.DataFrame) -> Tuple[pd.DataFrame, OneHotEncoder]:
     """
-    Converts all object columns in the given DataFrame to categorical values using one-hot encoding.
+    Preprocesses the input DataFrame by converting categorical columns into one-hot encoded columns
+    using sklearn's OneHotEncoder. The numerical columns are retained and concatenated with the
+    encoded categorical columns.
 
     Parameters:
-    df (pd.DataFrame): A pandas DataFrame containing the data to be processed.
+    -----------
+    df : pd.DataFrame
+        The input DataFrame containing both categorical and numerical columns.
 
     Returns:
-    pd.DataFrame: A pandas DataFrame with object columns converted to categorical values.
+    --------
+    Tuple[pd.DataFrame, OneHotEncoder]
+        - A DataFrame with categorical columns one-hot encoded and numerical columns retained.
+        - The fitted OneHotEncoder instance.
     """
-    # convert all object columns to categorical values.
-    df_processed = pd.get_dummies(df, drop_first=False)
-    df_processed.to_csv("C:\\Users\\Admin\\Desktop\\Semester_7\\MLOps\\AI-839\\srinivasan-ai-839\\data\\01_raw\\pre_processed.csv",index=False)
-    return df_processed
+    # Identify numeric and categorical columns
+    num_cols = df._get_numeric_data()
+    cat_cols = df.select_dtypes(include=['object'])
+    
+    if not cat_cols.empty:
+        # Initialize and fit the OneHotEncoder on categorical columns
+        encoder = OneHotEncoder(sparse_output=False, dtype='float', drop=None)
+        cat_cols_ohe = encoder.fit_transform(cat_cols)
+        
+        # Convert the encoded columns into a DataFrame
+        cat_cols_ohe_df = pd.DataFrame(
+            cat_cols_ohe, columns=encoder.get_feature_names_out(cat_cols.columns)
+        )
+        
+        # Concatenate the one-hot encoded categorical columns with the numeric columns
+        df_processed = pd.concat([cat_cols_ohe_df, num_cols.reset_index(drop=True)], axis=1)
+    else:
+        df_processed = df
+        encoder = None
+
+    # Save the processed DataFrame to a CSV file
+    df_processed.to_csv("C:\\Users\\Admin\\Desktop\\Semester_7\\MLOps\\AI-839\\srinivasan-ai-839\\data\\01_raw\\pre_processed.csv", index=False)
+    
+    return df_processed, encoder
+
+# def preprocess_data(df: pd.DataFrame) -> pd.DataFrame:
+#     """
+#     Converts all object columns in the given DataFrame to categorical values using one-hot encoding.
+
+#     Parameters:
+#     df (pd.DataFrame): A pandas DataFrame containing the data to be processed.
+
+#     Returns:
+#     pd.DataFrame: A pandas DataFrame with object columns converted to categorical values.
+#     """
+#     # convert all object columns to categorical values.
+#     df_processed = pd.get_dummies(df, drop_first=False)
+#     df_processed.to_csv("C:\\Users\\Admin\\Desktop\\Semester_7\\MLOps\\AI-839\\srinivasan-ai-839\\data\\01_raw\\pre_processed.csv",index=False)
+#     return df_processed
 
 
 def data_drift_quality_checks(df: pd.DataFrame) -> go.Figure:
