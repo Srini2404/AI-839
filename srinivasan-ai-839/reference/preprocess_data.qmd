@@ -1,0 +1,11 @@
+# preprocess_data { #srinivasan_ai_839.preprocess_data }
+
+`preprocess_data(df)`
+
+Converts all object columns in the given DataFrame to categorical values using one-hot encoding.
+
+Parameters:
+df (pd.DataFrame): A pandas DataFrame containing the data to be processed.
+
+Returns:
+pd.DataFrame: A pandas DataFrame with object columns converted to categorical values.

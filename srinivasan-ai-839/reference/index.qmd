@@ -1,0 +1,17 @@
+# Documentation for HW03 {.doc .doc-index}
+
+## srinivasan_ai_839
+
+Srinivasan-ai-839
+
+| | |
+| --- | --- |
+| [_isTelephone](_isTelephone.qmd#srinivasan_ai_839._isTelephone) | Checks if the values in the given pandas Series are equal to "yes". |
+| [preprocess_data](preprocess_data.qmd#srinivasan_ai_839.preprocess_data) | Converts all object columns in the given DataFrame to categorical values using one-hot encoding. |
+| [preprocess_and_drift_checks](preprocess_and_drift_checks.qmd#srinivasan_ai_839.preprocess_and_drift_checks) | Preprocesses the data and performs data drift quality checks. |
+| [data_drift_quality_checks](data_drift_quality_checks.qmd#srinivasan_ai_839.data_drift_quality_checks) | Performs data drift quality checks on the given DataFrame and returns a plotly figure. |
+| [data_drift_quality_checks_new](data_drift_quality_checks_new.qmd#srinivasan_ai_839.data_drift_quality_checks_new) | Performs new data drift quality checks on the given DataFrame and returns a plotly figure. |
+| [evaluate_model](evaluate_model.qmd#srinivasan_ai_839.evaluate_model) | Evaluates the trained model using the testing data and logs the accuracy. |
+| [split_dataset](split_dataset.qmd#srinivasan_ai_839.split_dataset) | Splits the dataset into training and testing sets for features and target. |
+| [train_model](train_model.qmd#srinivasan_ai_839.train_model) | Trains a RandomForestClassifier model using the provided training data. |
+| [create_pipeline](create_pipeline.qmd#srinivasan_ai_839.create_pipeline) | Creates a data processing pipeline. |

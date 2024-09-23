@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Srinivasan M">
+<meta name="dcterms.date" content="2024-08-12">
+
+<title>Project Card – Documentation for HW03</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Documentation for HW03</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#business-view" id="toc-business-view" class="nav-link active" data-scroll-target="#business-view">Business View</a>
+  <ul class="collapse">
+  <li><a href="#background" id="toc-background" class="nav-link" data-scroll-target="#background">Background</a></li>
+  <li><a href="#problem" id="toc-problem" class="nav-link" data-scroll-target="#problem">Problem</a></li>
+  <li><a href="#customer" id="toc-customer" class="nav-link" data-scroll-target="#customer">Customer</a></li>
+  <li><a href="#value-proposition" id="toc-value-proposition" class="nav-link" data-scroll-target="#value-proposition">Value Proposition</a></li>
+  <li><a href="#product" id="toc-product" class="nav-link" data-scroll-target="#product">Product</a></li>
+  <li><a href="#objectives" id="toc-objectives" class="nav-link" data-scroll-target="#objectives">Objectives</a></li>
+  <li><a href="#risks-challenges" id="toc-risks-challenges" class="nav-link" data-scroll-target="#risks-challenges">Risks &amp; Challenges</a></li>
+  </ul></li>
+  <li><a href="#ml-view" id="toc-ml-view" class="nav-link" data-scroll-target="#ml-view">ML View</a>
+  <ul class="collapse">
+  <li><a href="#task" id="toc-task" class="nav-link" data-scroll-target="#task">Task</a></li>
+  <li><a href="#metrics" id="toc-metrics" class="nav-link" data-scroll-target="#metrics">Metrics</a></li>
+  <li><a href="#evaluation" id="toc-evaluation" class="nav-link" data-scroll-target="#evaluation">Evaluation</a></li>
+  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a></li>
+  <li><a href="#plan-roadmap" id="toc-plan-roadmap" class="nav-link" data-scroll-target="#plan-roadmap">Plan/ Roadmap</a></li>
+  <li><a href="#continuous-improvement" id="toc-continuous-improvement" class="nav-link" data-scroll-target="#continuous-improvement">Continuous Improvement</a></li>
+  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a>
+  <ul class="collapse">
+  <li><a href="#human-resources" id="toc-human-resources" class="nav-link" data-scroll-target="#human-resources">Human Resources</a></li>
+  <li><a href="#compute-resources" id="toc-compute-resources" class="nav-link" data-scroll-target="#compute-resources">Compute Resources</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Project Card</h1>
+<p class="subtitle lead">Project Name</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Srinivasan M </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">August 12, 2024</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>The purpose of Project Cards is two folds. During development, it helps the developer think about the problem in a structured way w.r. t framing the problem, assessing the business value, viability, and many other aspects.</p>
+<p>It can also serve as a document giving a high level overview of the system developed and deployed. With proper versioning, one can also see the evolution of the problem. It is meant to be a high level document and as details emerge, documents such Model Cards and Data Cards can be linked.</p>
+<p>The following are the different sections of the Project Cards.</p>
+<p>This notebook uses tags to render the output. Each call has a tag. There are three tags: objective, instruction, response. The cell with objective tag explains the purpose of this project card. Cells with instruction tag, are the key sections of the document that must be filled. A cell following immediately will have a tag response. You only fill the cell with response tag. DO NOT MODIFY the cells with tag instruction. Of course, feel free to modify to your needs. Once the format is agreed upon, stick to it.</p>
+<section id="business-view" class="level1">
+<h1>Business View</h1>
+<section id="background" class="level2">
+<h2 class="anchored" data-anchor-id="background">Background</h2>
+<p>The real-estate business is evolving and challenging. Realtors are looking to attract customers to sell their houses and customers on the other hand want to get the best for what they pay.</p>
+</section>
+<section id="problem" class="level2">
+<h2 class="anchored" data-anchor-id="problem">Problem</h2>
+<p><em><strong>What</strong> is the problem being solved?</em></p>
+<p>Help users or home buyers in buying houses and recommending them the best ones for the money they pay.</p>
+</section>
+<section id="customer" class="level2">
+<h2 class="anchored" data-anchor-id="customer">Customer</h2>
+<p><em><strong>Who</strong> it is for? Is that a <em>user</em> or a <em>beneficiary</em>? What is the problem being solved? Who it is for?</em></p>
+<p>The solution is for a laymen buyer who wants to buy a house.</p>
+</section>
+<section id="value-proposition" class="level2">
+<h2 class="anchored" data-anchor-id="value-proposition">Value Proposition</h2>
+<p><em>Why it needs to be solved?</em></p>
+<p>Having a place to live in is next to essential, it is important to assist them in doing it.</p>
+</section>
+<section id="product" class="level2">
+<h2 class="anchored" data-anchor-id="product">Product</h2>
+<p><em>How does the solution look like? It is more of the experience, rather how it will be developed.</em></p>
+<p>It will be a user friendly webpage that will take in the user’s input and provide the user with the recommendations.</p>
+</section>
+<section id="objectives" class="level2">
+<h2 class="anchored" data-anchor-id="objectives">Objectives</h2>
+<p><em>Breakdown the product into key (business) objectives that need to be delivered?</em> <a href="https://med.stanford.edu/content/dam/sm/s-spire/documents/How-to-write-SMART-Goals-v2.pdf">SMART Goals</a> is useful to frame</p>
+<p>To deliver a housing recommendation application using machine learning, we can set the following SMART objectives:</p>
+<ol type="1">
+<li>Specific: Develop a machine learning model that recommends houses based on user preferences and budget.</li>
+<li>Measurable: Achieve an accuracy of at least 80% in predicting user preferences and recommending suitable houses.</li>
+<li>Achievable: Collect a dataset of at least 10,000 houses with relevant features such as location, price, size, amenities, etc.</li>
+<li>Relevant: Ensure that the recommended houses align with the user’s preferences, budget, and location.</li>
+<li>Time-bound: Complete the development and testing of the housing recommendation application within 6 months.</li>
+</ol>
+<p>By setting these SMART objectives, we can ensure a clear and measurable path towards delivering a successful housing recommendation application using machine learning.</p>
+</section>
+<section id="risks-challenges" class="level2">
+<h2 class="anchored" data-anchor-id="risks-challenges">Risks &amp; Challenges</h2>
+<p><em>What are the challenges one can face and ways to overcome?</em></p>
+<p>Some potential risks and challenges that we might face while creating the housing recommendation application are :</p>
+<ol type="1">
+<li><p>Data Availability: Obtaining a comprehensive and reliable dataset of houses with relevant features such as location, price, size, amenities, etc. can be challenging. Limited or incomplete data may affect the accuracy and effectiveness of the recommendations.</p></li>
+<li><p>Data Quality: Ensuring the quality and accuracy of the collected data is crucial. Inaccurate or inconsistent data can lead to biased recommendations and unreliable predictions.</p></li>
+<li><p>Model Complexity: Developing a machine learning model that accurately predicts user preferences and recommends suitable houses can be complex. Choosing the right algorithms, feature engineering, and model optimization require expertise and careful consideration.</p></li>
+<li><p>User Adoption: Convincing users to adopt and trust the housing recommendation application may pose a challenge. Users may have concerns about privacy, data security, and the reliability of the recommendations.</p></li>
+<li><p>Scalability: Designing the application to handle a large number of users and a growing dataset can be challenging. Ensuring that the application remains responsive and efficient as the user base and data volume increase is essential.</p></li>
+<li><p>Interpretability: Interpreting and explaining the recommendations generated by the machine learning model can be difficult. Users may require transparency and understanding of how the recommendations are generated to build trust in the system.</p></li>
+<li><p>Regulatory Compliance: Adhering to data protection and privacy regulations can be a challenge. Ensuring that user data is handled securely and in compliance with applicable laws and regulations is essential.</p></li>
+<li><p>Model Maintenance: As the real estate market evolves, the machine learning model needs to be regularly updated and maintained to reflect changing trends and user preferences. Keeping the model up-to-date and relevant can be a continuous effort.</p></li>
+<li><p>User Feedback and Iteration: Incorporating user feedback and continuously improving the application based on user needs and preferences can be challenging. Balancing user expectations, business goals, and technical constraints requires effective communication and agile development practices.</p></li>
+<li><p>Technical Infrastructure: Setting up and maintaining the necessary technical infrastructure, including servers, databases, and deployment pipelines, can be complex. Ensuring the application is robust, scalable, and reliable requires careful planning and implementation.</p></li>
+</ol>
+<p>It is important to anticipate these risks and challenges and have mitigation strategies in place to address them effectively during the development and deployment of the housing recommendation application.</p>
+</section>
+</section>
+<section id="ml-view" class="level1">
+<h1>ML View</h1>
+<section id="task" class="level2">
+<h2 class="anchored" data-anchor-id="task">Task</h2>
+<p><em>What type of prediction problem is this? Link <a href="https://arxiv.org/abs/1810.03993">Model Card</a> when sufficient details become available (start small but early)</em></p>
+<p>This is more of a recommendation problem that will recommend users the houses that intreset them and which closely aligns with their requirements.</p>
+</section>
+<section id="metrics" class="level2">
+<h2 class="anchored" data-anchor-id="metrics">Metrics</h2>
+<p><em>How will the solution be evaluated - What are the ML metrics? What are the business metrics? Link <a href="https://arxiv.org/abs/1810.03993">Model Card</a> when sufficient details become available (start small but early)</em></p>
+<p>To evaluate the performance of the ML model for the recommendation system for housing, we can use the following metrics:</p>
+<ol type="1">
+<li><p><strong>Precision</strong>: Precision measures the proportion of correctly recommended houses out of all the houses recommended. It helps assess the accuracy of the recommendations and the model’s ability to avoid false positives.</p></li>
+<li><p><strong>Recall</strong>: Recall measures the proportion of correctly recommended houses out of all the houses that should have been recommended. It helps assess the model’s ability to avoid false negatives and capture all relevant houses.</p></li>
+<li><p><strong>F1 Score</strong>: The F1 score is the harmonic mean of precision and recall. It provides a balanced measure of the model’s performance, taking into account both precision and recall.</p></li>
+<li><p><strong>Mean Average Precision (MAP)</strong>: MAP calculates the average precision across different levels of recommendation. It considers the order of the recommended houses and rewards models that rank more relevant houses higher.</p></li>
+<li><p><strong>Normalized Discounted Cumulative Gain (NDCG)</strong>: NDCG measures the quality of the ranking of the recommended houses. It takes into account both the relevance of the recommended houses and their position in the ranking.</p></li>
+<li><p><strong>Hit Rate</strong>: Hit rate measures the proportion of users for whom at least one relevant house was recommended. It helps assess the coverage of the recommendation system.</p></li>
+<li><p><strong>Mean Reciprocal Rank (MRR)</strong>: MRR calculates the average reciprocal rank of the first relevant house in the recommendation list. It provides a measure of the model’s ability to rank the most relevant houses higher.</p></li>
+<li><p><strong>User Satisfaction</strong>: User satisfaction can be measured through surveys or feedback from users. It helps assess the overall user experience and satisfaction with the recommended houses.</p></li>
+</ol>
+<p>These metrics can be calculated using a holdout or cross-validation approach, where a subset of the data is used for evaluation. It is important to consider both the ML metrics and the business metrics to ensure that the recommendation system meets the needs and expectations of the users.</p>
+</section>
+<section id="evaluation" class="level2">
+<h2 class="anchored" data-anchor-id="evaluation">Evaluation</h2>
+<p><em>How will the solution be evaluated (process)? Link <a href="https://arxiv.org/abs/1810.03993">Model Card</a> when sufficient details become available (start small but early)</em></p>
+<p>your response</p>
+</section>
+<section id="data" class="level2">
+<h2 class="anchored" data-anchor-id="data">Data</h2>
+<p><em>What type of data is needed? How will it be collected - for training and for continuous improvement? Link <a href="https://arxiv.org/abs/2204.01075">Data Cards</a> when sufficient details become available (start small but early)</em></p>
+<p>To train a housing recommendation model, we will need the following data:</p>
+<ol type="1">
+<li><p>House Descriptions: This includes information such as the number of bedrooms, bathrooms, square footage, location, price, and any additional features or characteristics of the house.</p></li>
+<li><p>House Images: Images of the houses can be used to extract visual features and provide a more comprehensive understanding of the property.</p></li>
+<li><p>Proximity Data: Data on nearby amenities such as schools, colleges, marketplaces, hospitals, parks, and transportation facilities. This information helps assess the convenience and accessibility of the location.</p></li>
+<li><p>Amenities Data: Details about the amenities available within the house or the housing complex, such as swimming pools, gyms, parking spaces, security systems, and other facilities.</p></li>
+</ol>
+<p>Collecting this data can be done through various sources, including real estate websites, property listings, public APIs, and data scraping techniques. It is important to ensure the data is accurate, up-to-date, and representative of the target housing market.</p>
+<p>Additionally, data preprocessing steps may be required to clean and transform the data into a suitable format for training the recommendation model. This may involve handling missing values, normalizing numerical features, encoding categorical variables, and performing feature engineering to extract relevant information.</p>
+<p>By gathering and preparing this data, we can build a robust housing recommendation system that considers various factors and preferences to provide accurate and personalized recommendations to users.</p>
+</section>
+<section id="plan-roadmap" class="level2">
+<h2 class="anchored" data-anchor-id="plan-roadmap">Plan/ Roadmap</h2>
+<p><em>Provide problem break-up, tentative timelines and deliverables? Use <a href="https://nesslabs.com/smart-goals-pact">PACT</a> format if SMART is not suitable.</em></p>
+<ol type="1">
+<li><strong>Problem Understanding and Data Collection</strong> (2 weeks)
+<ul>
+<li>Define the problem statement and objectives of the housing recommendation system.</li>
+<li>Gather relevant data sources such as house descriptions, images, proximity data, and amenities data.</li>
+<li>Perform data cleaning and preprocessing to ensure data quality and consistency.</li>
+</ul></li>
+<li><strong>Exploratory Data Analysis</strong> (1 week)
+<ul>
+<li>Analyze the collected data to gain insights into the distribution and characteristics of the houses.</li>
+<li>Identify any patterns or correlations between features that may be useful for recommendation.</li>
+</ul></li>
+<li><strong>Feature Engineering</strong> (2 weeks)
+<ul>
+<li>Extract and engineer relevant features from the collected data.</li>
+<li>Consider factors such as location, price, size, amenities, and proximity to create informative features.</li>
+</ul></li>
+<li><strong>Model Development</strong> (4 weeks)
+<ul>
+<li>Select an appropriate machine learning algorithm for the recommendation task.</li>
+<li>Train the model using the prepared dataset and evaluate its performance.</li>
+<li>Fine-tune the model parameters to optimize its accuracy and effectiveness.</li>
+</ul></li>
+<li><strong>User Interface Design</strong> (3 weeks)
+<ul>
+<li>Design a user-friendly webpage or application interface for users to input their preferences.</li>
+<li>Implement interactive features such as filters, sliders, and search functionalities for a seamless user experience.</li>
+</ul></li>
+<li><strong>Integration and Testing</strong> (2 weeks)
+<ul>
+<li>Integrate the trained recommendation model with the user interface.</li>
+<li>Conduct thorough testing to ensure the system functions correctly and provides accurate recommendations.</li>
+</ul></li>
+<li><strong>Deployment and Monitoring</strong> (1 week)
+<ul>
+<li>Deploy the housing recommendation system to a production environment.</li>
+<li>Set up monitoring and logging mechanisms to track system performance and user interactions.</li>
+</ul></li>
+<li><strong>Continuous Improvement</strong> (Ongoing)
+<ul>
+<li>Gather user feedback and incorporate it into the system to enhance recommendation accuracy.</li>
+<li>Monitor system performance and make necessary updates to adapt to changing user preferences and market trends.</li>
+</ul></li>
+</ol>
+<p>Please note that the timeline provided is just a rough estimate and can vary depending on the available resources.</p>
+</section>
+<section id="continuous-improvement" class="level2">
+<h2 class="anchored" data-anchor-id="continuous-improvement">Continuous Improvement</h2>
+<p><em>How will the system/model will improve? Provide a plan and means.</em></p>
+<p>To continuously improve the system/model, we can follow a plan that includes the following steps:</p>
+<ol type="1">
+<li><p>Collect User Feedback: Encourage users to provide feedback on the recommendations they receive. This can be done through surveys, ratings, or comments. User feedback is valuable in understanding the strengths and weaknesses of the system and identifying areas for improvement.</p></li>
+<li><p>Monitor Performance Metrics: Continuously monitor the performance metrics of the recommendation system/model. This includes metrics such as accuracy, precision, recall, and user satisfaction. By tracking these metrics, we can identify any deviations or drops in performance and take corrective actions.</p></li>
+<li><p>Analyze User Behavior: Analyze user behavior data to gain insights into how users interact with the system and the recommendations they find most useful. This can be done by tracking user clicks, dwell time, and engagement metrics. Understanding user preferences and patterns can help in refining the recommendation algorithms.</p></li>
+<li><p>Incorporate New Data: Regularly update the dataset used for training the recommendation system/model. This can involve collecting new data from various sources, such as real estate listings, user feedback, and external data providers. By incorporating new data, the system/model can adapt to changing trends and preferences.</p></li>
+<li><p>Experiment with Algorithms: Explore and experiment with different recommendation algorithms and techniques. This can include trying out collaborative filtering, content-based filtering, hybrid approaches, or even advanced techniques like deep learning. By experimenting with different algorithms, we can identify the ones that provide the best recommendations for our users.</p></li>
+<li><p>A/B Testing: Conduct A/B testing to evaluate the performance of different versions or variations of the recommendation system/model. This involves randomly assigning users to different groups and comparing the performance metrics between the groups. A/B testing helps in validating the effectiveness of new features or changes before deploying them to all users.</p></li>
+<li><p>Regular Model Updates: Keep the recommendation model up-to-date by retraining it periodically with new data. This ensures that the model stays relevant and accurate over time. Consider implementing automated pipelines for data collection, preprocessing, and model training to streamline the update process.</p></li>
+<li><p>Stay Updated with Research: Stay updated with the latest research and advancements in the field of recommendation systems. This can involve reading research papers, attending conferences, and participating in online communities. By staying informed, we can leverage new techniques and insights to enhance the system/model.</p></li>
+</ol>
+<p>By following this plan and continuously iterating on the system/model based on user feedback and performance metrics, we can ensure that the recommendation system/model improves over time and provides valuable and personalized recommendations to users.</p>
+</section>
+<section id="resources" class="level2">
+<h2 class="anchored" data-anchor-id="resources">Resources</h2>
+<p><em>What resources are needed? Estimate the cost!</em></p>
+<p>To train the recommendation system model, the following resources are needed:</p>
+<ol type="1">
+<li><p><strong>Data</strong>: A comprehensive dataset of houses with relevant features such as location, price, size, amenities, etc. This data can be collected from real estate websites, property listings, public APIs, and data scraping techniques.</p></li>
+<li><p><strong>House Descriptions</strong>: Information about the number of bedrooms, bathrooms, square footage, and any additional features or characteristics of the house.</p></li>
+<li><p><strong>House Images</strong>: Images of the houses to extract visual features and provide a more comprehensive understanding of the property.</p></li>
+<li><p><strong>Proximity Data</strong>: Data on nearby amenities such as schools, colleges, marketplaces, hospitals, parks, and transportation facilities. This information helps assess the convenience and accessibility of the location.</p></li>
+<li><p><strong>Amenities Data</strong>: Details about the amenities available within the house or the housing complex, such as swimming pools, gyms, parking spaces, security systems, and other facilities.</p></li>
+<li><p><strong>Computational Resources</strong>: Sufficient computational resources, such as a powerful CPU or GPU, to handle the training process efficiently.</p></li>
+<li><p><strong>Machine Learning Libraries</strong>: Libraries such as scikit-learn, TensorFlow, or PyTorch to implement and train the recommendation system model.</p></li>
+<li><p><strong>Development Environment</strong>: A Jupyter Notebook or any other development environment to write and execute the code for training the model.</p></li>
+<li><p><strong>Time and Effort</strong>: Sufficient time and effort to collect and preprocess the data, design and implement the model, and fine-tune its parameters.</p></li>
+<li><p><strong>Domain Knowledge</strong>: A good understanding of the real estate market and the factors that influence housing preferences and recommendations.</p></li>
+</ol>
+<section id="human-resources" class="level3">
+<h3 class="anchored" data-anchor-id="human-resources">Human Resources</h3>
+<p><em>what type of team and strength needed?</em></p>
+<p>To build this application, you would need a team with the following roles and strengths:</p>
+<ol type="1">
+<li><p><strong>Data Scientist</strong>: A data scientist with expertise in machine learning and recommendation systems would be essential for developing the housing recommendation model. They should have experience in data preprocessing, feature engineering, model selection, and evaluation.</p></li>
+<li><p><strong>Software Engineer</strong>: A software engineer with proficiency in web development would be required to build the user-friendly webpage for the application. They should have knowledge of front-end technologies such as HTML, CSS, and JavaScript, as well as back-end technologies like Python and web frameworks such as Flask or Django.</p></li>
+<li><p><strong>Database Administrator</strong>: A database administrator would be responsible for designing and maintaining the database that stores the housing data. They should have expertise in database management systems like MySQL, PostgreSQL, or MongoDB.</p></li>
+<li><p><strong>UI/UX Designer</strong>: A UI/UX designer would be needed to create an intuitive and visually appealing user interface for the application. They should have skills in user research, wireframing, prototyping, and usability testing.</p></li>
+<li><p><strong>Domain Expert</strong>: A domain expert in the real estate industry would be valuable for understanding user requirements, defining relevant features, and ensuring the recommendations align with market trends and preferences.</p></li>
+<li><p><strong>Project Manager</strong>: A project manager would be responsible for overseeing the development process, coordinating tasks, managing timelines, and ensuring effective communication among team members.</p></li>
+<li><p><strong>Quality Assurance Engineer</strong>: A quality assurance engineer would be required to test the application, identify and report any bugs or issues, and ensure the application meets the desired quality standards.</p></li>
+<li><p><strong>Data Engineer</strong>: A data engineer would be responsible for data collection, data cleaning, and data integration tasks. They should have knowledge of data extraction techniques, data pipelines, and data storage technologies.</p></li>
+<li><p><strong>DevOps Engineer</strong>: A DevOps engineer would be needed to set up and manage the deployment infrastructure, automate the deployment process, and ensure the application is scalable, secure, and reliable.</p></li>
+<li><p><strong>Communication and Collaboration Skills</strong>: Strong communication and collaboration skills are essential for effective teamwork, as team members need to work together, share ideas, and align their efforts towards a common goal.</p></li>
+</ol>
+</section>
+<section id="compute-resources" class="level3">
+<h3 class="anchored" data-anchor-id="compute-resources">Compute Resources</h3>
+<p><em>What type of compute resources needed to train and serve?</em></p>
+<p>To train and serve the housing recommendation model, you would need the following computer resources:</p>
+<ol type="1">
+<li><p><strong>Hardware</strong>: A computer with sufficient computational power is required for training the model. This can include a high-performance CPU or GPU, depending on the complexity of the model and the size of the dataset. GPUs are particularly useful for accelerating the training process, especially for deep learning models.</p></li>
+<li><p><strong>Memory</strong>: Sufficient memory (RAM) is necessary to handle the data and model during training. The amount of memory required depends on the size of the dataset and the complexity of the model. Larger datasets and more complex models generally require more memory.</p></li>
+<li><p><strong>Storage</strong>: Adequate storage space is needed to store the dataset, model files, and any other necessary resources. The size of the storage depends on the size of the dataset and the number of models being trained and served.</p></li>
+<li><p><strong>Software</strong>: You will need software tools and libraries for training and serving the model. This can include machine learning frameworks such as scikit-learn, TensorFlow, or PyTorch, as well as any additional libraries or packages required for data preprocessing, model evaluation, and deployment.</p></li>
+<li><p><strong>Development Environment</strong>: A Jupyter Notebook or any other development environment is needed to write and execute the code for training the model. This environment should have the necessary software dependencies installed.</p></li>
+<li><p><strong>Networking</strong>: A stable internet connection is required for downloading datasets, accessing external APIs or services, and serving the model to users.</p></li>
+<li><p><strong>Scalability</strong>: If you anticipate a large number of users or a growing dataset, you may need to consider scalable infrastructure options such as cloud computing platforms or distributed computing frameworks to handle the increased workload.</p></li>
+</ol>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
