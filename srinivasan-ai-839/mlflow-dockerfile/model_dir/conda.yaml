@@ -1,0 +1,5 @@
+dependencies:
+- kedro==0.19.8
+- pip:
+  - mlflow==2.16.0
+python: 3.10.14

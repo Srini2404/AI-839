@@ -1,0 +1,4 @@
+evidently==0.4.37
+kedro==0.19.8
+mlflow==2.16.0
+kedro-mlflow==0.13.0
