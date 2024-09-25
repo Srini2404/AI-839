@@ -29,3 +29,6 @@ attr = "srinivasan_ai_839.__version__"
 [tool.setuptools.packages.find]
 where = [ "src",]
 namespaces = false
+
+[tool.kedro_telemetry]
+project_id = "7b1f36fd37694a35ba7106d52bc99cd0"

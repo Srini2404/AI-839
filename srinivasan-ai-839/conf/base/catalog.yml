@@ -2,12 +2,11 @@
 #
 # Documentation for this file format can be found in "The Data Catalog"
 # Link: https://docs.kedro.org/en/stable/data/data_catalog.html
-<<<<<<< main
-=======
 
 dataset_id_214:
   type: pandas.CSVDataset
   filepath: data/01_raw/dataset_id_214.csv
+
   # load_args:
 
 inference_data:
@@ -33,11 +32,11 @@ preprocessed_data:
 
 model2:
   type: pickle.PickleDataset
-  filepath: data/06_models/model2.pkl
+  filepath: data\\06_models\\model2.pkl
 
 classifier_model:
   type:  kedro_mlflow.io.artifacts.MlflowArtifactDataset
-  # filepath: data/06_models/classifier_model.pkl
+  # filepath: data\\06_models\\classifier_model.pkl
   dataset:
     # type: pickle.PickleDataset
     type: kedro_mlflow.io.models.MlflowModelLocalFileSystemDataset
@@ -51,7 +50,7 @@ classifier_model:
 
 data_drift_plot:
   type: plotly.JSONDataset
-  filepath: data/08_reporting/data_drift_plot.json
+  filepath: data\\08_reporting\\data_drift_plot.json
   # versioned: true
   # plotly_args:
   #   to_json: True 
@@ -59,4 +58,3 @@ data_drift_plot:
 target_plot:
   type: plotly.JSONDataset
   filepath: data/08_reporting/target_plot.json
->>>>>>> local

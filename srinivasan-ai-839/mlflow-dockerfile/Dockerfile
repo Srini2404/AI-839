@@ -11,9 +11,9 @@ WORKDIR /opt/mlflow
 RUN pip install mlflow==2.16.0
 
 # Copy model to image and install dependencies
-COPY model_dir/model /opt/ml/model
-COPY /Packages /opt/ml/Packages
-RUN pip install /opt/ml/Packages/* 
+COPY model_dir/ /opt/ml/model
+COPY /Package /opt/mlflow/Package
+RUN pip install  /opt/mlflow/Package/*
 RUN python -c "from mlflow.models import container as C; C._install_pyfunc_deps('/opt/ml/model', install_mlflow=False, enable_mlserver=False, env_manager='local');"
 
 ENV MLFLOW_DISABLE_ENV_CREATION=True

@@ -1,0 +1,23 @@
+project:
+  type: website
+
+website:
+  title: "Documentation for HW03"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - about.qmd
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+  
+quartodoc:
+  title: "Documentation for HW03"
+  package: srinivasan_ai_839
+
+
+

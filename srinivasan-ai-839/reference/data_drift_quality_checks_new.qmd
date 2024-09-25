@@ -1,0 +1,11 @@
+# data_drift_quality_checks_new { #srinivasan_ai_839.data_drift_quality_checks_new }
+
+`data_drift_quality_checks_new(df)`
+
+Performs new data drift quality checks on the given DataFrame and returns a plotly figure.
+
+Args:
+    df: A pandas DataFrame containing the data to be checked for drift.
+
+Returns:
+    go.Figure: A plotly figure representing the new data drift quality checks.

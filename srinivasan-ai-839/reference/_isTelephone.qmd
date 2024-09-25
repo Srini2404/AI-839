@@ -1,0 +1,11 @@
+# _isTelephone { #srinivasan_ai_839._isTelephone }
+
+`_isTelephone(x)`
+
+Checks if the values in the given pandas Series are equal to "yes".
+
+Parameters:
+x (pd.Series): A pandas Series containing the data to be checked.
+
+Returns:
+pd.Series: A pandas Series of boolean values where True indicates the value is "yes" and False otherwise.
