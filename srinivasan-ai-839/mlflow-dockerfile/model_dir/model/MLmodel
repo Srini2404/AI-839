@@ -1,0 +1,24 @@
+artifact_path: model
+flavors:
+  python_function:
+    artifacts:
+      encoder:
+        path: artifacts\encoder.pkl
+        uri: file:///C:/Users/Admin/Desktop/Semester_7/MLOps/AI-839/srinivasan-ai-839/data/03_primary/encoder.pkl
+      model2:
+        path: artifacts\model2.pkl
+        uri: file:///C:/Users/Admin/Desktop/Semester_7/MLOps/AI-839/srinivasan-ai-839/data/06_models/model2.pkl
+    cloudpickle_version: 3.0.0
+    code: null
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.pyfunc.model
+    python_model: python_model.pkl
+    python_version: 3.10.14
+    streamable: false
+mlflow_version: 2.16.0
+model_size_bytes: 245632
+model_uuid: de375ea9e07e4890b022d83d464bd445
+run_id: 4cfff7eeb4fd4cf7b086a3f09b4eb9cb
+utc_time_created: '2024-09-11 19:44:59.817569'

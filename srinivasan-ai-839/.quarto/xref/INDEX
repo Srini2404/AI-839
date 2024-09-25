@@ -1,0 +1,50 @@
+{
+  "about.qmd": {
+    "about.html": "289c2d48"
+  },
+  "index.qmd": {
+    "index.html": "66ca8b6f"
+  },
+  "notebooks/data_exploration.ipynb": {
+    "data_exploration.html": "9d6e832d"
+  },
+  "notebooks/hw01.ipynb": {
+    "hw01.html": "45feec99"
+  },
+  "notebooks/hw02.ipynb": {
+    "hw02.html": "db7b43b6"
+  },
+  "notebooks/ModelTraining.ipynb": {
+    "ModelTraining.html": "19fd2b13"
+  },
+  "reference/create_pipeline.qmd": {
+    "create_pipeline.html": "04cefc27"
+  },
+  "reference/evaluate_model.qmd": {
+    "evaluate_model.html": "f34691e5"
+  },
+  "reference/index.qmd": {
+    "index.html": "5405edaa"
+  },
+  "reference/preprocess_data.qmd": {
+    "preprocess_data.html": "14b7dfc6"
+  },
+  "reference/split_dataset.qmd": {
+    "split_dataset.html": "9ae34743"
+  },
+  "reference/train_model.qmd": {
+    "train_model.html": "9ac0918c"
+  },
+  "notebooks/evidently.ipynb": {
+    "evidently.html": "45489b51"
+  },
+  "reference/data_drift_quality_checks.qmd": {
+    "data_drift_quality_checks.html": "e125222d"
+  },
+  "reference/data_drift_quality_checks_new.qmd": {
+    "data_drift_quality_checks_new.html": "a867b9d8"
+  },
+  "reference/preprocess_and_drift_checks.qmd": {
+    "preprocess_and_drift_checks.html": "374de107"
+  }
+}
