@@ -17,7 +17,7 @@ def create_pipeline(**kwargs) -> Pipeline:
         ),
         node(
             func=run_inference,
-            inputs=["model2","inference_processed_data"],
+            inputs=["model_3","inference_processed_data"],
             outputs="output_result"
         )
     ])

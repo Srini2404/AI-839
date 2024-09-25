@@ -81,6 +81,7 @@ def preprocess_data(df: pd.DataFrame) -> Tuple[pd.DataFrame, OneHotEncoder]:
     """
     # Identify numeric and categorical columns
     num_cols = df._get_numeric_data()
+    df.fillna(0,inplace=True)
     cat_cols = df.select_dtypes(include=['object'])
     
     if not cat_cols.empty:
@@ -100,7 +101,7 @@ def preprocess_data(df: pd.DataFrame) -> Tuple[pd.DataFrame, OneHotEncoder]:
         encoder = None
 
     # Save the processed DataFrame to a CSV file
-    df_processed.to_csv("C:\\Users\\Admin\\Desktop\\Semester_7\\MLOps\\AI-839\\srinivasan-ai-839\\data\\01_raw\\pre_processed.csv", index=False)
+    df_processed.to_csv("C:\\Users\\Admin\\Desktop\\Semester_7\\MLOps\\AI-839\\srinivasan-ai-839\\data\\01_raw\\pre_processed_new.csv", index=False)
     
     return df_processed, encoder
 

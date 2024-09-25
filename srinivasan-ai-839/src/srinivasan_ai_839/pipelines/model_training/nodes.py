@@ -5,7 +5,7 @@ generated using Kedro 0.19.8
 
 import logging
 import pandas as pd
-from sklearn.ensemble import RandomForestClassifier
+from sklearn.ensemble import GradientBoostingClassifier, RandomForestClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, r2_score
 import typing as t
@@ -87,7 +87,7 @@ def split_dataset(
     return X_train, X_test, Y_train, Y_test
 
 
-def train_model(X_train: pd.DataFrame, Y_train: pd.Series) -> RandomForestClassifier:
+def train_model(X_train: pd.DataFrame, Y_train: pd.Series) -> GradientBoostingClassifier:
     """
     Trains a RandomForestClassifier model using the provided training data. Used Kedro-MlFlow plugin to log the artifact.
 
@@ -100,7 +100,7 @@ def train_model(X_train: pd.DataFrame, Y_train: pd.Series) -> RandomForestClassi
     """
     # Initialize the model
 
-    model = RandomForestClassifier(random_state=42)
+    model = GradientBoostingClassifier()
     # mlflow.log_artifact("C:\\Users\\Admin\\Desktop\\Semester_7\\MLOps\\AI-839\\srinivasan-ai-839\\data\\01_raw\\dataset_id_214.csv")
     mlflow.autolog()
     # mlflow.log_artifact(local_path=os.path.join("data", "02_modelinput", "preprocessed_data.csv"))
@@ -112,7 +112,7 @@ def train_model(X_train: pd.DataFrame, Y_train: pd.Series) -> RandomForestClassi
 
 
 def evaluate_model(
-    model: RandomForestClassifier, X_test: pd.DataFrame, Y_test: pd.Series
+    model: GradientBoostingClassifier, X_test: pd.DataFrame, Y_test: pd.Series
 ):
     """
     Evaluates the trained model using the testing data and logs the accuracy.

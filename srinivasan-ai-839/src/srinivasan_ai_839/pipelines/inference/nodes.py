@@ -5,7 +5,7 @@ generated using Kedro 0.19.8
 import pandas as pd
 
 import datetime
-from sklearn.ensemble import RandomForestClassifier
+from sklearn.ensemble import GradientBoostingClassifier, RandomForestClassifier
 from sklearn.preprocessing import OneHotEncoder
 import logging
 import os
@@ -60,8 +60,7 @@ def pre_processing(data: pd.DataFrame, encoder: OneHotEncoder) -> pd.DataFrame:
 
     return data_processed
 
-
-def run_inference(model: RandomForestClassifier, data: pd.DataFrame):
+def run_inference(model: GradientBoostingClassifier, data: pd.DataFrame):
     try:
         logging.info("Starting inference process...")
         df = data
@@ -77,7 +76,7 @@ def run_inference(model: RandomForestClassifier, data: pd.DataFrame):
         raise
 
 
-def log_usage(model: RandomForestClassifier, input_data: pd.DataFrame, predictions: pd.DataFrame):
+def log_usage(model: GradientBoostingClassifier, input_data: pd.DataFrame, predictions: pd.DataFrame):
     """
     Logs details about model usage including input data, predictions, model details, and timestamp.
     """
