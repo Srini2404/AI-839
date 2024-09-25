@@ -19,6 +19,6 @@ flavors:
     streamable: false
 mlflow_version: 2.16.0
 model_size_bytes: 245607
-model_uuid: 25bc691397674f6aaffc0601b4961623
-run_id: ff14f5085772442ab3b05ce35d9cc042
-utc_time_created: '2024-09-24 17:13:11.087368'
+model_uuid: 322f5a91a97846d9a2d3c6a67ccecd27
+run_id: 844a6a522b494ccaa1abc7ff3c33e417
+utc_time_created: '2024-09-24 18:21:18.376351'

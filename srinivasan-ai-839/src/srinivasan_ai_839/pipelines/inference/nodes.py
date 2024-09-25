@@ -12,17 +12,13 @@ import os
 
 log_file = "model_usage.log"
 
-# Ensure the log file is created if it doesn't exist
-if not os.path.exists(log_file):
-    with open(log_file, 'w'):  # This will create the file if it doesn't exist
-        pass
-print(os.curdir)
-
+# Configure logging to log everything to the file, including DEBUG level messages
 logging.basicConfig(
     filename=log_file,
     level=logging.DEBUG,  # Set to DEBUG to capture everything
     format="%(asctime)s - %(levelname)s - %(message)s",
 )
+
 
 
 
@@ -65,27 +61,25 @@ def pre_processing(data: pd.DataFrame, encoder: OneHotEncoder) -> pd.DataFrame:
     return data_processed
 
 
-def run_inference(model:RandomForestClassifier, data:pd.DataFrame) :
-    df = data
-    prediction = model.predict(df)
-    # print(prediction)
-    log_usage(model,df,prediction)
-    return pd.DataFrame(prediction)
-
+def run_inference(model: RandomForestClassifier, data: pd.DataFrame):
+    try:
+        logging.info("Starting inference process...")
+        df = data
+        prediction = model.predict(df)
+        predictions = pd.DataFrame(prediction)
+        
+        log_usage(model, df, predictions)
+        
+        logging.info("Inference completed.")
+        return predictions
+    except Exception as e:
+        logging.error(f"Error during inference: {e}")
+        raise
 
 
 def log_usage(model: RandomForestClassifier, input_data: pd.DataFrame, predictions: pd.DataFrame):
     """
     Logs details about model usage including input data, predictions, model details, and timestamp.
-    
-    Parameters:
-    -----------
-    model : RandomForestClassifier
-        The trained model being used for inference.
-    input_data : pd.DataFrame
-        The input data for inference.
-    predictions : pd.DataFrame
-        The predictions made by the model.
     """
     logging.info(f"Model: {model.__class__.__name__}")
     logging.info(f"Number of trees in the model: {model.n_estimators}")
@@ -94,5 +88,4 @@ def log_usage(model: RandomForestClassifier, input_data: pd.DataFrame, predictio
     logging.debug(f"Input data:\n{input_data.head()}")
     logging.info(f"Output shape: {predictions.shape}")
     logging.debug(f"Predictions:\n{predictions.head()}")
-    logging.info(f"Timestamp: {datetime.now()}")
-
+    logging.info(f"Timestamp: {datetime.datetime.now()}")
