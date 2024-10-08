@@ -13,6 +13,8 @@ conf/**/*credentials*
 data/**
 logs/**
 
+
+*.pth
 # except their sub-folders
 !data/**/
 !logs/**/
