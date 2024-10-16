@@ -5,7 +5,8 @@
 
 dataset_id_214:
   type: pandas.CSVDataset
-  filepath: data\\01_raw\\dataset_id_214.csv
+  filepath: data/01_raw/dataset_id_214.csv
+
   # load_args:
 
 inference_data:
@@ -56,4 +57,4 @@ data_drift_plot:
 
 target_plot:
   type: plotly.JSONDataset
-  filepath: data\\08_reporting\\target_plot.json
+  filepath: data/08_reporting/target_plot.json
