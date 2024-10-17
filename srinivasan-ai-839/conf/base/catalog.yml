@@ -34,6 +34,10 @@ model2:
   type: pickle.PickleDataset
   filepath: data\\06_models\\model2.pkl
 
+model_new:
+  type: pickle.PickleDataset
+  filepath: data\\06_models\\model_new.pkl
+
 classifier_model:
   type:  kedro_mlflow.io.artifacts.MlflowArtifactDataset
   # filepath: data\\06_models\\classifier_model.pkl

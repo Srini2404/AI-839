@@ -100,7 +100,7 @@ def preprocess_data(df: pd.DataFrame) -> Tuple[pd.DataFrame, OneHotEncoder]:
         encoder = None
 
     # Save the processed DataFrame to a CSV file
-    df_processed.to_csv("C:\\Users\\Admin\\Desktop\\Semester_7\\MLOps\\AI-839\\srinivasan-ai-839\\data\\01_raw\\pre_processed.csv", index=False)
+    df_processed.to_csv("C:\\Users\\Admin\\Desktop\\AI-839\\srinivasan-ai-839\\data\\01_raw\\pre_processed.csv", index=False)
     
     return df_processed, encoder
 
