@@ -1,6 +1,8 @@
 # evaluate_model { #srinivasan_ai_839.evaluate_model }
 
-`evaluate_model(model, X_test, Y_test)`
+```python
+evaluate_model(model, X_test, Y_test)
+```
 
 Evaluates the trained model using the testing data and logs the accuracy.
 
@@ -8,6 +10,8 @@ Parameters:
 model (RandomForestClassifier): The trained model to be evaluated.
 X_test (pd.DataFrame): The testing features.
 Y_test (pd.Series): The testing target.
+
+Used Kedro mlflow plugin to log the accuracy , the time of prediction.
 
 Returns:
 None

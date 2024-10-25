@@ -1,6 +1,8 @@
 # _isTelephone { #srinivasan_ai_839._isTelephone }
 
-`_isTelephone(x)`
+```python
+_isTelephone(x)
+```
 
 Checks if the values in the given pandas Series are equal to "yes".
 

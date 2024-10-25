@@ -157,6 +157,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#note" id="toc-note" class="nav-link" data-scroll-target="#note">Note:</a></li>
   </ul></li>
   <li><a href="#code-to-extract-features" id="toc-code-to-extract-features" class="nav-link" data-scroll-target="#code-to-extract-features">Code to Extract Features</a></li>
+  <li><a href="#explanation-of-meta-feature-column-names" id="toc-explanation-of-meta-feature-column-names" class="nav-link" data-scroll-target="#explanation-of-meta-feature-column-names">Explanation of Meta-Feature Column Names</a></li>
   <li><a href="#file-output" id="toc-file-output" class="nav-link" data-scroll-target="#file-output">File Output</a></li>
   </ul></li>
   </ul>
@@ -395,6 +396,147 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="code-to-extract-features" class="level2">
 <h2 class="anchored" data-anchor-id="code-to-extract-features">Code to Extract Features</h2>
 <p>The following code was used to load the Soybean dataset, extract basic dataset features, and compute meta-features using the PyMFE library:</p>
+</section>
+<section id="explanation-of-meta-feature-column-names" class="level2">
+<h2 class="anchored" data-anchor-id="explanation-of-meta-feature-column-names">Explanation of Meta-Feature Column Names</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 28%">
+<col style="width: 71%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Feature</strong></th>
+<th><strong>Meaning</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>num_instances</td>
+<td>Total number of instances (rows) in the dataset.</td>
+</tr>
+<tr class="even">
+<td>num_attributes</td>
+<td>Total number of attributes (columns) in the dataset, excluding the target.</td>
+</tr>
+<tr class="odd">
+<td>num_classes</td>
+<td>Total number of distinct classes in the target attribute.</td>
+</tr>
+<tr class="even">
+<td>attr_conc.mean</td>
+<td>Mean attribute concentration.</td>
+</tr>
+<tr class="odd">
+<td>attr_conc.sd</td>
+<td>Standard deviation of attribute concentration.</td>
+</tr>
+<tr class="even">
+<td>best_node.mean</td>
+<td>Mean value of the best node metric.</td>
+</tr>
+<tr class="odd">
+<td>best_node.sd</td>
+<td>Standard deviation of the best node metric.</td>
+</tr>
+<tr class="even">
+<td>can_cor.mean</td>
+<td>Mean canonical correlation.</td>
+</tr>
+<tr class="odd">
+<td>can_cor.sd</td>
+<td>Standard deviation of canonical correlation.</td>
+</tr>
+<tr class="even">
+<td>class_conc.mean</td>
+<td>Mean class concentration.</td>
+</tr>
+<tr class="odd">
+<td>class_conc.sd</td>
+<td>Standard deviation of class concentration.</td>
+</tr>
+<tr class="even">
+<td>class_ent</td>
+<td>Class entropy, a measure of class distribution randomness.</td>
+</tr>
+<tr class="odd">
+<td>cor.mean</td>
+<td>Mean correlation between attributes.</td>
+</tr>
+<tr class="even">
+<td>cor.sd</td>
+<td>Standard deviation of correlation between attributes.</td>
+</tr>
+<tr class="odd">
+<td>eigenvalues.mean</td>
+<td>Mean of the eigenvalues of the covariance matrix.</td>
+</tr>
+<tr class="even">
+<td>eigenvalues.sd</td>
+<td>Standard deviation of the eigenvalues of the covariance matrix.</td>
+</tr>
+<tr class="odd">
+<td>freq_class.mean</td>
+<td>Mean frequency of the classes.</td>
+</tr>
+<tr class="even">
+<td>freq_class.sd</td>
+<td>Standard deviation of the frequency of the classes.</td>
+</tr>
+<tr class="odd">
+<td>gravity</td>
+<td>Gravity, a measure related to the dataset’s geometric properties.</td>
+</tr>
+<tr class="even">
+<td>kurtosis.mean</td>
+<td>Mean kurtosis of the attributes.</td>
+</tr>
+<tr class="odd">
+<td>kurtosis.sd</td>
+<td>Standard deviation of kurtosis of the attributes.</td>
+</tr>
+<tr class="even">
+<td>leaves</td>
+<td>Total number of leaves in the decision tree.</td>
+</tr>
+<tr class="odd">
+<td>leaves_branch.mean</td>
+<td>Mean number of leaves per branch in the decision tree.</td>
+</tr>
+<tr class="even">
+<td>leaves_branch.sd</td>
+<td>Standard deviation of leaves per branch in the decision tree.</td>
+</tr>
+<tr class="odd">
+<td>leaves_per_class.mean</td>
+<td>Mean number of leaves per class in the decision tree.</td>
+</tr>
+<tr class="even">
+<td>leaves_per_class.sd</td>
+<td>Standard deviation of leaves per class in the decision tree.</td>
+</tr>
+<tr class="odd">
+<td>max.mean</td>
+<td>Mean of the maximum values of the attributes.</td>
+</tr>
+<tr class="even">
+<td>median.mean</td>
+<td>Mean of the median values of the attributes.</td>
+</tr>
+<tr class="odd">
+<td>median.sd</td>
+<td>Standard deviation of the median values of the attributes.</td>
+</tr>
+<tr class="even">
+<td>min.mean</td>
+<td>Mean of the minimum values of the attributes.</td>
+</tr>
+<tr class="odd">
+<td>min.sd</td>
+<td>Standard deviation of the minimum values of the attributes.</td>
+</tr>
+</tbody>
+</table>
 <div id="cell-3" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> arff</span>

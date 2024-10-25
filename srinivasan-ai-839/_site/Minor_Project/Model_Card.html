@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>create_pipeline – Documentation for HW03</title>
+<title>model_card – Documentation for HW03</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,40 +19,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -146,7 +112,40 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#srinivasan_ai_839.create_pipeline" id="toc-srinivasan_ai_839.create_pipeline" class="nav-link active" data-scroll-target="#srinivasan_ai_839.create_pipeline">create_pipeline</a></li>
+  <li><a href="#model-card-randomforestclassifier-for-credit-risk-prediction" id="toc-model-card-randomforestclassifier-for-credit-risk-prediction" class="nav-link active" data-scroll-target="#model-card-randomforestclassifier-for-credit-risk-prediction">Model Card: RandomForestClassifier for Credit Risk Prediction</a>
+  <ul class="collapse">
+  <li><a href="#model-overview" id="toc-model-overview" class="nav-link" data-scroll-target="#model-overview">1. Model Overview</a></li>
+  <li><a href="#intended-use" id="toc-intended-use" class="nav-link" data-scroll-target="#intended-use">2. Intended Use</a>
+  <ul class="collapse">
+  <li><a href="#primary-use-case" id="toc-primary-use-case" class="nav-link" data-scroll-target="#primary-use-case">Primary Use Case:</a></li>
+  <li><a href="#secondary-use-cases" id="toc-secondary-use-cases" class="nav-link" data-scroll-target="#secondary-use-cases">Secondary Use Cases:</a></li>
+  </ul></li>
+  <li><a href="#dataset-and-preprocessing" id="toc-dataset-and-preprocessing" class="nav-link" data-scroll-target="#dataset-and-preprocessing">3. Dataset and Preprocessing</a>
+  <ul class="collapse">
+  <li><a href="#data-source" id="toc-data-source" class="nav-link" data-scroll-target="#data-source">3.1 Data Source</a></li>
+  <li><a href="#preprocessing" id="toc-preprocessing" class="nav-link" data-scroll-target="#preprocessing">3.2 Preprocessing</a></li>
+  </ul></li>
+  <li><a href="#model-architecture" id="toc-model-architecture" class="nav-link" data-scroll-target="#model-architecture">4. Model Architecture</a>
+  <ul class="collapse">
+  <li><a href="#key-parameters" id="toc-key-parameters" class="nav-link" data-scroll-target="#key-parameters">Key Parameters:</a></li>
+  </ul></li>
+  <li><a href="#model-performance" id="toc-model-performance" class="nav-link" data-scroll-target="#model-performance">5. Model Performance</a>
+  <ul class="collapse">
+  <li><a href="#confusion-matrix" id="toc-confusion-matrix" class="nav-link" data-scroll-target="#confusion-matrix">Confusion Matrix</a></li>
+  </ul></li>
+  <li><a href="#model-interpretability" id="toc-model-interpretability" class="nav-link" data-scroll-target="#model-interpretability">6. Model Interpretability</a></li>
+  <li><a href="#ethical-considerations" id="toc-ethical-considerations" class="nav-link" data-scroll-target="#ethical-considerations">7. Ethical Considerations</a>
+  <ul class="collapse">
+  <li><a href="#fairness-and-bias" id="toc-fairness-and-bias" class="nav-link" data-scroll-target="#fairness-and-bias">Fairness and Bias</a></li>
+  <li><a href="#limitations" id="toc-limitations" class="nav-link" data-scroll-target="#limitations">Limitations:</a></li>
+  </ul></li>
+  <li><a href="#model-limitations-and-future-work" id="toc-model-limitations-and-future-work" class="nav-link" data-scroll-target="#model-limitations-and-future-work">8. Model Limitations and Future Work</a>
+  <ul class="collapse">
+  <li><a href="#current-limitations" id="toc-current-limitations" class="nav-link" data-scroll-target="#current-limitations">Current Limitations:</a></li>
+  <li><a href="#future-enhancements" id="toc-future-enhancements" class="nav-link" data-scroll-target="#future-enhancements">Future Enhancements:</a></li>
+  </ul></li>
+  <li><a href="#contact-information" id="toc-contact-information" class="nav-link" data-scroll-target="#contact-information">9. Contact Information</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -156,15 +155,180 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<section id="srinivasan_ai_839.create_pipeline" class="level1">
-<h1>create_pipeline</h1>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>create_pipeline(<span class="op">**</span>kwargs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Creates a data processing pipeline.</p>
-<p>This pipeline consists of a single node that preprocesses the data from the input dataset.</p>
-<p>Parameters: **kwargs: Additional keyword arguments.</p>
-<p>Returns: Pipeline: A Kedro pipeline object with the defined nodes.</p>
+<section id="model-card-randomforestclassifier-for-credit-risk-prediction" class="level1">
+<h1>Model Card: RandomForestClassifier for Credit Risk Prediction</h1>
+<section id="model-overview" class="level2">
+<h2 class="anchored" data-anchor-id="model-overview">1. Model Overview</h2>
+<p>The <strong>RandomForestClassifier</strong> predicts the likelihood of credit risk for applicants based on various demographic and financial attributes. This ensemble model builds multiple decision trees on bootstrapped samples and averages their predictions, making it robust to overfitting and well-suited for tabular data with categorical and numerical features.</p>
+<ul>
+<li><strong>Model Name:</strong> RandomForestClassifier</li>
+<li><strong>Model Type:</strong> Random Forest Classifier</li>
+<li><strong>Use Case:</strong> Credit Risk Prediction</li>
+<li><strong>Framework:</strong> Scikit-learn</li>
+<li><strong>Version:</strong> 1.0</li>
+</ul>
+<hr>
+</section>
+<section id="intended-use" class="level2">
+<h2 class="anchored" data-anchor-id="intended-use">2. Intended Use</h2>
+<section id="primary-use-case" class="level3">
+<h3 class="anchored" data-anchor-id="primary-use-case">Primary Use Case:</h3>
+<p>This model is designed to assist <strong>loan officers</strong> and <strong>financial institutions</strong> in evaluating credit risk, predicting if an applicant is a low or high credit risk based on objective, data-driven analysis.</p>
+</section>
+<section id="secondary-use-cases" class="level3">
+<h3 class="anchored" data-anchor-id="secondary-use-cases">Secondary Use Cases:</h3>
+<ul>
+<li><strong>Risk Management</strong>: Helping credit analysts identify and categorize risk profiles.</li>
+<li><strong>Automated Risk Scoring</strong>: Providing risk scores for batch applicant processing, highlighting high-risk cases for further examination.</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="dataset-and-preprocessing" class="level2">
+<h2 class="anchored" data-anchor-id="dataset-and-preprocessing">3. Dataset and Preprocessing</h2>
+<section id="data-source" class="level3">
+<h3 class="anchored" data-anchor-id="data-source">3.1 Data Source</h3>
+<p>The model was trained on a <strong>synthetic credit risk dataset</strong> containing demographic, financial, and credit history details, including: - <strong>Numerical Features</strong>: <code>duration</code>, <code>credit_amount</code>, <code>installment_commitment</code>, <code>age</code>, <code>existing_credits</code>, <code>num_dependents</code> - <strong>Categorical Features</strong>: <code>checking_status</code>, <code>credit_history</code>, <code>purpose</code>, <code>employment</code>, <code>property_magnitude</code>, etc. - <strong>Derived Features</strong>: Continuous features (X_1 to X_13), possibly embeddings or derived scores.</p>
+</section>
+<section id="preprocessing" class="level3">
+<h3 class="anchored" data-anchor-id="preprocessing">3.2 Preprocessing</h3>
+<ul>
+<li><strong>Numerical Features</strong>: Used without additional scaling.</li>
+<li><strong>Categorical Features</strong>: One-hot encoded to maintain granularity.</li>
+<li><strong>Missing Data</strong>: Treated with an imputation step to handle any missing values in categorical or numerical data.</li>
+<li><strong>Data Drift Checking</strong>: Used Evidently to check for Data Drift in the dataset.</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="model-architecture" class="level2">
+<h2 class="anchored" data-anchor-id="model-architecture">4. Model Architecture</h2>
+<p>The <strong>RandomForestClassifier</strong> model builds multiple decision trees from random samples and combines them through majority voting to make final predictions. This helps minimize overfitting and yields stable results even on noisy data.</p>
+<section id="key-parameters" class="level3">
+<h3 class="anchored" data-anchor-id="key-parameters">Key Parameters:</h3>
+<ul>
+<li><strong>Number of Estimators</strong>: 100 (default)</li>
+<li><strong>Max Depth</strong>: None (default)</li>
+<li><strong>Min Samples Split</strong>: 2 (default)</li>
+<li><strong>Max Features</strong>: <code>auto</code> (default)</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="model-performance" class="level2">
+<h2 class="anchored" data-anchor-id="model-performance">5. Model Performance</h2>
+<p>The model was evaluated on a holdout test set, showing high accuracy and balanced performance metrics. Key evaluation metrics include:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Metric</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Accuracy</strong></td>
+<td>0.95</td>
+</tr>
+<tr class="even">
+<td><strong>Precision</strong></td>
+<td>0.92</td>
+</tr>
+<tr class="odd">
+<td><strong>Recall</strong></td>
+<td>1.00</td>
+</tr>
+<tr class="even">
+<td><strong>F1-Score</strong></td>
+<td>0.96</td>
+</tr>
+<tr class="odd">
+<td><strong>ROC AUC</strong></td>
+<td>0.94</td>
+</tr>
+</tbody>
+</table>
+<section id="confusion-matrix" class="level3">
+<h3 class="anchored" data-anchor-id="confusion-matrix">Confusion Matrix</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th>Predicted Low Risk</th>
+<th>Predicted High Risk</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>True Low</strong></td>
+<td>7</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td><strong>True High</strong></td>
+<td>0</td>
+<td>12</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="model-interpretability" class="level2">
+<h2 class="anchored" data-anchor-id="model-interpretability">6. Model Interpretability</h2>
+<p>To provide transparency, <strong>SHAP (SHapley Additive exPlanations)</strong> values were used to identify the impact of individual features on the model’s predictions. Important features influencing credit risk prediction include:</p>
+<ol type="1">
+<li><strong>Credit Score</strong>: Higher scores correlate with lower risk.</li>
+<li><strong>Loan Amount</strong>: Lower amounts reduce the probability of high risk.</li>
+<li><strong>Applicant Age</strong>: Older applicants show a slight increase in low-risk likelihood.</li>
+</ol>
+<hr>
+</section>
+<section id="ethical-considerations" class="level2">
+<h2 class="anchored" data-anchor-id="ethical-considerations">7. Ethical Considerations</h2>
+<section id="fairness-and-bias" class="level3">
+<h3 class="anchored" data-anchor-id="fairness-and-bias">Fairness and Bias</h3>
+<p>Potential bias exists due to historical data patterns, and the model may require ongoing fairness checks. Fairness metrics are monitored to ensure the model treats protected groups equitably.</p>
+</section>
+<section id="limitations" class="level3">
+<h3 class="anchored" data-anchor-id="limitations">Limitations:</h3>
+<ul>
+<li><strong>Historical Bias</strong>: Model predictions could inherit biases from training data.</li>
+<li><strong>Automation Bias</strong>: The model should support, but not fully replace, human decision-making.</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="model-limitations-and-future-work" class="level2">
+<h2 class="anchored" data-anchor-id="model-limitations-and-future-work">8. Model Limitations and Future Work</h2>
+<section id="current-limitations" class="level3">
+<h3 class="anchored" data-anchor-id="current-limitations">Current Limitations:</h3>
+<ul>
+<li><strong>Data Dependence</strong>: Model reliability depends on data quality and completeness.</li>
+<li><strong>Interpretability</strong>: Although relatively interpretable, complex decisions may still require further explanation beyond SHAP insights.</li>
+</ul>
+</section>
+<section id="future-enhancements" class="level3">
+<h3 class="anchored" data-anchor-id="future-enhancements">Future Enhancements:</h3>
+<ul>
+<li><strong>Feature Expansion</strong>: Including broader socio-economic indicators for better risk profiles.</li>
+<li><strong>Bias Mitigation</strong>: Implement adversarial debiasing methods to address fairness challenges.</li>
+<li><strong>Real-Time Learning</strong>: Expanding model capabilities for real-time data adaptation.</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="contact-information" class="level2">
+<h2 class="anchored" data-anchor-id="contact-information">9. Contact Information</h2>
+<p>For questions or feedback on the model:</p>
+<ul>
+<li><strong>Name</strong>: M Srinivasan</li>
+<li><strong>Email</strong>: m.srinivasan@iiitb.ac.in<br>
+</li>
+<li><strong>Model Version</strong>: 2.0</li>
+</ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

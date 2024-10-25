@@ -1,6 +1,8 @@
 # preprocess_and_drift_checks { #srinivasan_ai_839.preprocess_and_drift_checks }
 
-`preprocess_and_drift_checks(df)`
+```python
+preprocess_and_drift_checks(df)
+```
 
 Preprocesses the data and performs data drift quality checks.
 

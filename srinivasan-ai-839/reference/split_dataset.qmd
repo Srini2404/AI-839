@@ -1,6 +1,8 @@
 # split_dataset { #srinivasan_ai_839.split_dataset }
 
-`split_dataset(dataset)`
+```python
+split_dataset(dataset)
+```
 
 Splits the dataset into training and testing sets for features and target.
 

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>create_pipeline – Documentation for HW03</title>
+<title>test – Documentation for HW03</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -141,14 +141,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#srinivasan_ai_839.create_pipeline" id="toc-srinivasan_ai_839.create_pipeline" class="nav-link active" data-scroll-target="#srinivasan_ai_839.create_pipeline">create_pipeline</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -156,16 +150,36 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<section id="srinivasan_ai_839.create_pipeline" class="level1">
-<h1>create_pipeline</h1>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>create_pipeline(<span class="op">**</span>kwargs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Creates a data processing pipeline.</p>
-<p>This pipeline consists of a single node that preprocesses the data from the input dataset.</p>
-<p>Parameters: **kwargs: Additional keyword arguments.</p>
-<p>Returns: Pipeline: A Kedro pipeline object with the defined nodes.</p>
+<div id="cell-0" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> mlflow</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> kedro_mlflow.mlflow.kedro_pipeline_model <span class="im">import</span> KedroPipelineModel</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-1" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># mlflow</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> mlflow.pyfunc.load_model(<span class="st">"C:/Users/Admin/Desktop/Semester_7/MLOps/AI-839/srinivasan-ai-839/mlruns/145819852400594150/1115b774afee4f5cbe6c09970e2d29b8/artifacts/model"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[09/23/24 16:50:25] INFO     Loading data from encoder      data_catalog.py:539
+                             (PickleDataset)...                                
+                    INFO     Saving data to encoder         data_catalog.py:581
+                             (MemoryDataset)...                                
+                    INFO     Loading data from model2       data_catalog.py:539
+                             (PickleDataset)...                                
+                    INFO     Saving data to model2          data_catalog.py:581
+                             (MemoryDataset)...                                </code></pre>
+</div>
+</div>
+<div id="cell-2" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>model</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="5">
+<pre><code>mlflow.pyfunc.loaded_model:
+  artifact_path: model
+  flavor: mlflow.pyfunc.model
+  run_id: 1115b774afee4f5cbe6c09970e2d29b8</code></pre>
+</div>
+</div>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

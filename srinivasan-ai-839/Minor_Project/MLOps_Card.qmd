@@ -1,0 +1,115 @@
+# MLOps Card: Tech Stack for Model Development and Deployment
+
+## 1. Overview
+
+This MLOps pipeline is designed to streamline the machine learning lifecycle from **data ingestion and preprocessing** through **model training, evaluation, versioning, and deployment**. Leveraging tools like Kedro, MLflow, Evidently, GitHub for version control, and Docker, this stack ensures reproducibility, versioning, and reliability of the deployed model.
+
+---
+
+## 2. Tech Stack Summary
+
+| Tool        | Purpose                                       |
+|-------------|-----------------------------------------------|
+| **Kedro**   | Orchestrating and managing ML pipelines       |
+| **MLflow**  | Tracking, logging, and model versioning       |
+| **Evidently** | Data Drift Checking |
+| **GitHub**  | Version control for code and collaboration    |
+| **Docker**  | Containerization for consistent environments  |
+
+---
+
+
+## 3. Pipeline Orchestration: Kedro
+
+### Description
+Kedro is the primary framework used for structuring machine learning workflows. It enables clear data pipeline organization, modular code development, and seamless integration with MLflow for experiment tracking.
+
+### Key Features
+- **Node and Pipeline Structure**: Kedro organizes ML tasks into nodes, which are then connected as pipelines. Each node represents a single function, and pipelines can be reused for training, evaluation, and deployment.
+- **Data Catalog Management**: The Kedro Data Catalog ensures data consistency and proper management of input/output datasets.
+- **Environment Configuration**: Kedro's `conf` directory facilitates seamless environment-based configuration (e.g., local, staging, production).
+
+### MLOps Integration
+- **Kedro with MLflow**: Integrating Kedro with MLflow enables automated logging of model artifacts, metrics, and parameters for each pipeline run.
+- **Docker Support**: Kedro pipelines are dockerized, allowing for containerized execution, which improves consistency across development and production environments.
+---
+
+## 4. Experiment Tracking and Model Registry: MLflow
+
+### Description
+MLflow is used for experiment tracking and model versioning, enabling detailed insights into model performance, hyperparameter tuning, and version control.
+
+### Key Features
+- **Experiment Tracking**: Logs metrics, parameters, and artifacts, enabling reproducibility and comparison across experiments.
+- **Model Registry**: Centralizes model versions and manages their lifecycle stages (e.g., `Staging`, `Production`).
+- **API Integration**: MLflow's API allows seamless access to models for inference, making deployment straightforward.
+
+### Usage in Pipeline
+- **Automated Logging**: Metrics from model training and evaluation (e.g., accuracy, AUC) are logged automatically with each pipeline run.
+- **Model Versioning**: The model registry ensures that only the best-performing models are promoted to production.
+- **Deployment Readiness**: Supports REST API deployment or integration with a CI/CD workflow for automatic staging.
+---
+
+
+## 5. Model Performance Monitoring: Evidently
+
+### Description
+Evidently monitors model performance and detects drift in data distributions, ensuring models remain reliable over time and under changing data conditions.
+
+### Key Features
+- **Drift Detection**: Alerts on changes in data distribution or prediction performance to maintain model reliability.
+- **Performance Tracking**: Measures and monitors metrics such as accuracy, precision, and recall in production.
+- **Dashboarding**: Visualizes data and model performance trends over time, allowing stakeholders to assess model health.
+
+### Deployment
+- **Periodic Reports**: Evidently can be configured to produce reports at regular intervals, capturing performance changes.
+- **Alerts Integration**: Notifications for detected drifts and outliers can be set up via Evidently to integrate with Slack or other communication tools.
+
+---
+
+## 6. Version Control and Collaboration: GitHub
+
+### Description
+GitHub manages code versioning, collaboration, and review workflows, making it easier for team members to collaborate on code and track changes.
+
+### Key Features
+- **Branching and Merging**: Enables parallel workstreams, with clear history and version control across branches.
+- **Pull Requests (PRs)**: Facilitates code review and quality checks before merging new code into main branches.
+
+### Best Practices
+- **Commit Regularly**: Regular commits with descriptive messages to track experiment evolution.
+- **Code Reviews**: Enforce code reviews on PRs to improve code quality and ensure adherence to project standards.
+
+---
+
+## 7. Containerization and Deployment: Docker
+
+### Description
+Docker is used to containerize the application, ensuring consistency across development, testing, and production environments.
+
+### Key Features
+- **Environment Consistency**: Docker images standardize environments, eliminating discrepancies across setups.
+- **Easy Deployment**: Containers simplify deployment by packaging dependencies and configurations within an image.
+- **Resource Isolation**: Each model version or pipeline step can be run in isolated containers, enhancing security and scalability.
+
+### MLOps Integration
+- **Dockerized Kedro Pipelines**: The entire Kedro pipeline runs within a Docker container, making it easier to deploy to cloud environments or Kubernetes clusters.
+- **MLflow API Deployment**: MLflow models can be served in a Dockerized setup, simplifying scaling for production use cases.
+---
+
+## 8. Workflow Summary
+
+1. **Data Ingestion and Preprocessing**: Kedro pipelines orchestrate data loading, transformation, and storage in a centralized data catalog.
+2. **Model Training**: Model experiments are tracked in MLflow, with version control for reproducibility.
+3. **Evaluation and Logging**: MLflow logs metrics, parameters, and model artifacts, while Evidently monitors performance and detects drift.
+4. **Version Control and Collaboration**: GitHub manages all code, documentation, and model versioning with branching and pull request workflows.
+5. **Containerization**: Docker images encapsulate the pipeline, making it portable across environments.
+6. **Deployment and Monitoring**: MLflow registry manages model lifecycle stages, with Dockerized deployments, and Evidently monitors performance post-deployment.
+---
+
+## 9. Contact Information
+
+For questions or issues related to the MLOps setup, please reach out to:
+
+- **MLOps Team**: Srinivasan M 
+- **Email**: m.srinivasan@iiitb.ac.in

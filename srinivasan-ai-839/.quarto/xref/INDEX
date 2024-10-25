@@ -46,5 +46,32 @@
   },
   "reference/preprocess_and_drift_checks.qmd": {
     "preprocess_and_drift_checks.html": "374de107"
+  },
+  "gradients.ipynb": {
+    "gradients.html": "50d65920"
+  },
+  "Minor_Project/Data_Card.qmd": {
+    "Data_Card.html": "caa2ac27"
+  },
+  "Minor_Project/Model_Card.qmd": {
+    "Model_Card.html": "ec89b5c6"
+  },
+  "Minor_Project/Project_Card.qmd": {
+    "Project_Card.html": "4ebf5237"
+  },
+  "notebook3f941fc1bd.ipynb": {
+    "notebook3f941fc1bd.html": "15725ca8"
+  },
+  "notebooks/Hw06.ipynb": {
+    "Hw06.html": "b11ce3ed"
+  },
+  "notebooks/Mini_Project.ipynb": {
+    "Mini_Project.html": "e44725bc"
+  },
+  "notebooks/test.ipynb": {
+    "test.html": "aaf644d2"
+  },
+  "Minor_Project/MLOps_Card.qmd": {
+    "MLOps_Card.html": "5e8323a0"
   }
 }

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>create_pipeline – Documentation for HW03</title>
+<title>project_card – Documentation for HW03</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,40 +19,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -146,7 +112,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#srinivasan_ai_839.create_pipeline" id="toc-srinivasan_ai_839.create_pipeline" class="nav-link active" data-scroll-target="#srinivasan_ai_839.create_pipeline">create_pipeline</a></li>
+  <li><a href="#project-card-histogramgradientclassifier-for-credit-risk-prediction" id="toc-project-card-histogramgradientclassifier-for-credit-risk-prediction" class="nav-link active" data-scroll-target="#project-card-histogramgradientclassifier-for-credit-risk-prediction">Project Card: HistogramGradientClassifier for Credit Risk Prediction</a>
+  <ul class="collapse">
+  <li><a href="#business-view" id="toc-business-view" class="nav-link" data-scroll-target="#business-view">Business View</a>
+  <ul class="collapse">
+  <li><a href="#background" id="toc-background" class="nav-link" data-scroll-target="#background">1. Background</a></li>
+  <li><a href="#problem" id="toc-problem" class="nav-link" data-scroll-target="#problem">2. Problem</a></li>
+  <li><a href="#customer" id="toc-customer" class="nav-link" data-scroll-target="#customer">3. Customer</a></li>
+  <li><a href="#value-proposition" id="toc-value-proposition" class="nav-link" data-scroll-target="#value-proposition">4. Value Proposition</a></li>
+  <li><a href="#product" id="toc-product" class="nav-link" data-scroll-target="#product">5. Product</a></li>
+  <li><a href="#objective" id="toc-objective" class="nav-link" data-scroll-target="#objective">6. Objective</a></li>
+  <li><a href="#risks-and-challenges" id="toc-risks-and-challenges" class="nav-link" data-scroll-target="#risks-and-challenges">7. Risks and Challenges</a></li>
+  </ul></li>
+  <li><a href="#ml-view" id="toc-ml-view" class="nav-link" data-scroll-target="#ml-view">ML View</a>
+  <ul class="collapse">
+  <li><a href="#task" id="toc-task" class="nav-link" data-scroll-target="#task">1. Task</a></li>
+  <li><a href="#metrics" id="toc-metrics" class="nav-link" data-scroll-target="#metrics">2. Metrics</a></li>
+  <li><a href="#evaluation" id="toc-evaluation" class="nav-link" data-scroll-target="#evaluation">3. Evaluation</a></li>
+  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">4. Data</a></li>
+  <li><a href="#plan" id="toc-plan" class="nav-link" data-scroll-target="#plan">5. Plan</a></li>
+  <li><a href="#roadmap" id="toc-roadmap" class="nav-link" data-scroll-target="#roadmap">6. Roadmap</a></li>
+  <li><a href="#ci" id="toc-ci" class="nav-link" data-scroll-target="#ci">7. CI</a></li>
+  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">8. Resources</a></li>
+  </ul></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -156,15 +145,116 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<section id="srinivasan_ai_839.create_pipeline" class="level1">
-<h1>create_pipeline</h1>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>create_pipeline(<span class="op">**</span>kwargs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Creates a data processing pipeline.</p>
-<p>This pipeline consists of a single node that preprocesses the data from the input dataset.</p>
-<p>Parameters: **kwargs: Additional keyword arguments.</p>
-<p>Returns: Pipeline: A Kedro pipeline object with the defined nodes.</p>
+<section id="project-card-histogramgradientclassifier-for-credit-risk-prediction" class="level1">
+<h1>Project Card: HistogramGradientClassifier for Credit Risk Prediction</h1>
+<hr>
+<section id="business-view" class="level2">
+<h2 class="anchored" data-anchor-id="business-view">Business View</h2>
+<section id="background" class="level3">
+<h3 class="anchored" data-anchor-id="background">1. Background</h3>
+<p>Financial institutions need reliable, data-driven methods to assess credit risk for loan applicants. This ensures responsible lending practices and helps minimize defaults.</p>
+</section>
+<section id="problem" class="level3">
+<h3 class="anchored" data-anchor-id="problem">2. Problem</h3>
+<p>Assessing credit risk accurately remains challenging due to the diversity of applicant profiles and inconsistencies in traditional manual evaluations. Automated scoring is necessary to handle large volumes and provide fair, objective assessments.</p>
+</section>
+<section id="customer" class="level3">
+<h3 class="anchored" data-anchor-id="customer">3. Customer</h3>
+<p>This model is intended for use by <strong>loan officers</strong>, <strong>credit risk analysts</strong>, and <strong>financial institutions</strong> requiring automated, data-supported tools to enhance their credit scoring systems.</p>
+</section>
+<section id="value-proposition" class="level3">
+<h3 class="anchored" data-anchor-id="value-proposition">4. Value Proposition</h3>
+<p>The <strong>HistogramGradientClassifier</strong> aids financial institutions in assessing the likelihood of applicants defaulting on loans with high accuracy, allowing for better risk management, reduced default rates, and more consistent decision-making.</p>
+</section>
+<section id="product" class="level3">
+<h3 class="anchored" data-anchor-id="product">5. Product</h3>
+<p>A credit risk prediction system that integrates the <strong>HistogramGradientClassifier</strong> as its primary model, providing real-time risk scoring and applicant profiling.</p>
+</section>
+<section id="objective" class="level3">
+<h3 class="anchored" data-anchor-id="objective">6. Objective</h3>
+<p>To reduce the number of high-risk loans granted, improve accuracy in credit scoring, and provide insights to support the loan approval process.</p>
+</section>
+<section id="risks-and-challenges" class="level3">
+<h3 class="anchored" data-anchor-id="risks-and-challenges">7. Risks and Challenges</h3>
+<ul>
+<li><strong>Data Bias</strong>: Historical biases in the data may affect predictions.</li>
+<li><strong>Compliance</strong>: Ensuring the model aligns with regulations like GDPR and financial compliance standards.</li>
+<li><strong>Model Interpretability</strong>: Tree-based methods may present challenges in explainability for stakeholders.</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="ml-view" class="level2">
+<h2 class="anchored" data-anchor-id="ml-view">ML View</h2>
+<section id="task" class="level3">
+<h3 class="anchored" data-anchor-id="task">1. Task</h3>
+<p>Binary classification to predict whether an applicant poses a low or high credit risk.</p>
+</section>
+<section id="metrics" class="level3">
+<h3 class="anchored" data-anchor-id="metrics">2. Metrics</h3>
+<ul>
+<li><strong>Primary Metrics</strong>: Accuracy, Precision, Recall, F1-Score, ROC AUC</li>
+<li><strong>Secondary Metrics</strong>: SHAP-based interpretability measures for feature importance insights.</li>
+</ul>
+</section>
+<section id="evaluation" class="level3">
+<h3 class="anchored" data-anchor-id="evaluation">3. Evaluation</h3>
+<p>Evaluated on a holdout test set with a focus on achieving high accuracy and balanced recall for both risk classes, particularly minimizing false negatives (high-risk applicants misclassified as low risk).</p>
+</section>
+<section id="data" class="level3">
+<h3 class="anchored" data-anchor-id="data">4. Data</h3>
+<ul>
+<li><strong>Source</strong>: Synthetic credit risk data with demographic, financial, and historical credit information.</li>
+<li><strong>Preprocessing</strong>: Includes one-hot encoding for categorical data, handling missing values with histogram-based binning, and treating derived continuous features as embeddings or standardized scores.</li>
+</ul>
+</section>
+<section id="plan" class="level3">
+<h3 class="anchored" data-anchor-id="plan">5. Plan</h3>
+<ol type="1">
+<li><strong>Exploratory Data Analysis (EDA)</strong>: Conduct EDA to identify data distribution, missing values, and potential biases.</li>
+<li><strong>Feature Engineering</strong>: Integrate derived socio-economic indicators for enriched risk profiling.</li>
+<li><strong>Model Development</strong>: Train, validate, and fine-tune the <strong>HistogramGradientClassifier</strong> with gradient boosting on histograms for structured data.</li>
+<li><strong>Performance Tuning</strong>: Optimize hyperparameters to ensure robustness across multiple test datasets.</li>
+<li><strong>Explainability Assessment</strong>: Apply SHAP values and fairness metrics to monitor any adverse effects on specific demographics.</li>
+</ol>
+</section>
+<section id="roadmap" class="level3">
+<h3 class="anchored" data-anchor-id="roadmap">6. Roadmap</h3>
+<ol type="1">
+<li><strong>Phase 1</strong>: Data Collection &amp; Preprocessing</li>
+<li><strong>Phase 2</strong>: Model Training &amp; Validation</li>
+<li><strong>Phase 3</strong>: Performance Optimization &amp; Evaluation</li>
+<li><strong>Phase 4</strong>: Deployment Readiness &amp; Compliance Check</li>
+<li><strong>Phase 5</strong>: Monitoring and Updating</li>
+</ol>
+</section>
+<section id="ci" class="level3">
+<h3 class="anchored" data-anchor-id="ci">7. CI</h3>
+<p>Continuous Integration for this model includes automated testing, validation, and deployment pipelines. GitHub actions are set to trigger on each code push, while Jenkins schedules periodic retraining based on data updates.</p>
+</section>
+<section id="resources" class="level3">
+<h3 class="anchored" data-anchor-id="resources">8. Resources</h3>
+<section id="human-resources" class="level4">
+<h4 class="anchored" data-anchor-id="human-resources">Human Resources</h4>
+<ul>
+<li><strong>Data Scientists</strong>: Responsible for data processing, feature engineering, and model training.</li>
+<li><strong>Data Engineers</strong>: Handle data pipelines and preprocessing requirements.</li>
+<li><strong>ML Engineers</strong>: Oversee deployment, CI/CD, and monitoring.</li>
+</ul>
+</section>
+<section id="compute-resources" class="level4">
+<h4 class="anchored" data-anchor-id="compute-resources">Compute Resources</h4>
+<ul>
+<li><strong>Training Environment</strong>: Access to high-performance CPU instances with limited GPU availability for efficient model training.</li>
+<li><strong>Deployment</strong>: Cloud-based microservices for model inference with load balancing and autoscaling.</li>
+</ul>
+<hr>
+<p><strong>End of Project Card</strong></p>
 
 
+</section>
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->

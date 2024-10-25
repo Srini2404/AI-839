@@ -1,6 +1,8 @@
 # create_pipeline { #srinivasan_ai_839.create_pipeline }
 
-`create_pipeline(**kwargs)`
+```python
+create_pipeline(**kwargs)
+```
 
 Creates a data processing pipeline.
 

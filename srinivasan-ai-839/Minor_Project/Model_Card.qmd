@@ -1,0 +1,111 @@
+# Model Card: RandomForestClassifier for Credit Risk Prediction
+
+## 1. Model Overview
+
+The **RandomForestClassifier** predicts the likelihood of credit risk for applicants based on various demographic and financial attributes. This ensemble model builds multiple decision trees on bootstrapped samples and averages their predictions, making it robust to overfitting and well-suited for tabular data with categorical and numerical features.
+
+- **Model Name:** RandomForestClassifier
+- **Model Type:** Random Forest Classifier
+- **Use Case:** Credit Risk Prediction
+- **Framework:** Scikit-learn
+- **Version:** 1.0
+
+---
+
+## 2. Intended Use
+
+### Primary Use Case:
+This model is designed to assist **loan officers** and **financial institutions** in evaluating credit risk, predicting if an applicant is a low or high credit risk based on objective, data-driven analysis.
+
+### Secondary Use Cases:
+- **Risk Management**: Helping credit analysts identify and categorize risk profiles.
+- **Automated Risk Scoring**: Providing risk scores for batch applicant processing, highlighting high-risk cases for further examination.
+
+---
+
+## 3. Dataset and Preprocessing
+
+### 3.1 Data Source
+The model was trained on a **synthetic credit risk dataset** containing demographic, financial, and credit history details, including:
+- **Numerical Features**: `duration`, `credit_amount`, `installment_commitment`, `age`, `existing_credits`, `num_dependents`
+- **Categorical Features**: `checking_status`, `credit_history`, `purpose`, `employment`, `property_magnitude`, etc.
+- **Derived Features**: Continuous features (X_1 to X_13), possibly embeddings or derived scores.
+
+### 3.2 Preprocessing
+- **Numerical Features**: Used without additional scaling.
+- **Categorical Features**: One-hot encoded to maintain granularity.
+- **Missing Data**: Treated with an imputation step to handle any missing values in categorical or numerical data.
+- **Data Drift Checking**: Used Evidently to check for Data Drift in the dataset.
+---
+
+## 4. Model Architecture
+
+The **RandomForestClassifier** model builds multiple decision trees from random samples and combines them through majority voting to make final predictions. This helps minimize overfitting and yields stable results even on noisy data.
+
+### Key Parameters:
+- **Number of Estimators**: 100 (default)
+- **Max Depth**: None (default)
+- **Min Samples Split**: 2 (default)
+- **Max Features**: `auto` (default)
+
+---
+## 5. Model Performance
+
+The model was evaluated on a holdout test set, showing high accuracy and balanced performance metrics. Key evaluation metrics include:
+
+
+| Metric              | Value |
+|---------------------|-------|
+| **Accuracy**        | 0.95  |
+| **Precision**       | 0.92  |
+| **Recall**          | 1.00  |
+| **F1-Score**        | 0.96  |
+| **ROC AUC**         | 0.94  |
+
+### Confusion Matrix
+|                | Predicted Low Risk | Predicted High Risk |
+|----------------|--------------------|----------------------|
+| **True Low**   | 7                | 1                   |
+| **True High**  | 0                 | 12                  |
+
+## 6. Model Interpretability
+
+To provide transparency, **SHAP (SHapley Additive exPlanations)** values were used to identify the impact of individual features on the model's predictions. Important features influencing credit risk prediction include:
+
+1. **Credit Score**: Higher scores correlate with lower risk.
+2. **Loan Amount**: Lower amounts reduce the probability of high risk.
+3. **Applicant Age**: Older applicants show a slight increase in low-risk likelihood.
+
+---
+
+## 7. Ethical Considerations
+
+### Fairness and Bias
+Potential bias exists due to historical data patterns, and the model may require ongoing fairness checks. Fairness metrics are monitored to ensure the model treats protected groups equitably.
+
+### Limitations:
+- **Historical Bias**: Model predictions could inherit biases from training data.
+- **Automation Bias**: The model should support, but not fully replace, human decision-making.
+
+---
+
+## 8. Model Limitations and Future Work
+
+### Current Limitations:
+- **Data Dependence**: Model reliability depends on data quality and completeness.
+- **Interpretability**: Although relatively interpretable, complex decisions may still require further explanation beyond SHAP insights.
+
+### Future Enhancements:
+- **Feature Expansion**: Including broader socio-economic indicators for better risk profiles.
+- **Bias Mitigation**: Implement adversarial debiasing methods to address fairness challenges.
+- **Real-Time Learning**: Expanding model capabilities for real-time data adaptation.
+
+---
+
+## 9. Contact Information
+
+For questions or feedback on the model:
+
+- **Name**: M Srinivasan
+- **Email**: m.srinivasan@iiitb.ac.in   
+- **Model Version**: 2.0

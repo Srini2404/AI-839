@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>create_pipeline – Documentation for HW03</title>
+<title>mlops_card – Documentation for HW03</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,40 +19,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -146,7 +112,43 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#srinivasan_ai_839.create_pipeline" id="toc-srinivasan_ai_839.create_pipeline" class="nav-link active" data-scroll-target="#srinivasan_ai_839.create_pipeline">create_pipeline</a></li>
+  <li><a href="#mlops-card-tech-stack-for-model-development-and-deployment" id="toc-mlops-card-tech-stack-for-model-development-and-deployment" class="nav-link active" data-scroll-target="#mlops-card-tech-stack-for-model-development-and-deployment">MLOps Card: Tech Stack for Model Development and Deployment</a>
+  <ul class="collapse">
+  <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview">1. Overview</a></li>
+  <li><a href="#tech-stack-summary" id="toc-tech-stack-summary" class="nav-link" data-scroll-target="#tech-stack-summary">2. Tech Stack Summary</a></li>
+  <li><a href="#pipeline-orchestration-kedro" id="toc-pipeline-orchestration-kedro" class="nav-link" data-scroll-target="#pipeline-orchestration-kedro">3. Pipeline Orchestration: Kedro</a>
+  <ul class="collapse">
+  <li><a href="#description" id="toc-description" class="nav-link" data-scroll-target="#description">Description</a></li>
+  <li><a href="#key-features" id="toc-key-features" class="nav-link" data-scroll-target="#key-features">Key Features</a></li>
+  <li><a href="#mlops-integration" id="toc-mlops-integration" class="nav-link" data-scroll-target="#mlops-integration">MLOps Integration</a></li>
+  </ul></li>
+  <li><a href="#experiment-tracking-and-model-registry-mlflow" id="toc-experiment-tracking-and-model-registry-mlflow" class="nav-link" data-scroll-target="#experiment-tracking-and-model-registry-mlflow">4. Experiment Tracking and Model Registry: MLflow</a>
+  <ul class="collapse">
+  <li><a href="#description-1" id="toc-description-1" class="nav-link" data-scroll-target="#description-1">Description</a></li>
+  <li><a href="#key-features-1" id="toc-key-features-1" class="nav-link" data-scroll-target="#key-features-1">Key Features</a></li>
+  <li><a href="#usage-in-pipeline" id="toc-usage-in-pipeline" class="nav-link" data-scroll-target="#usage-in-pipeline">Usage in Pipeline</a></li>
+  </ul></li>
+  <li><a href="#model-performance-monitoring-evidently" id="toc-model-performance-monitoring-evidently" class="nav-link" data-scroll-target="#model-performance-monitoring-evidently">5. Model Performance Monitoring: Evidently</a>
+  <ul class="collapse">
+  <li><a href="#description-2" id="toc-description-2" class="nav-link" data-scroll-target="#description-2">Description</a></li>
+  <li><a href="#key-features-2" id="toc-key-features-2" class="nav-link" data-scroll-target="#key-features-2">Key Features</a></li>
+  <li><a href="#deployment" id="toc-deployment" class="nav-link" data-scroll-target="#deployment">Deployment</a></li>
+  </ul></li>
+  <li><a href="#version-control-and-collaboration-github" id="toc-version-control-and-collaboration-github" class="nav-link" data-scroll-target="#version-control-and-collaboration-github">6. Version Control and Collaboration: GitHub</a>
+  <ul class="collapse">
+  <li><a href="#description-3" id="toc-description-3" class="nav-link" data-scroll-target="#description-3">Description</a></li>
+  <li><a href="#key-features-3" id="toc-key-features-3" class="nav-link" data-scroll-target="#key-features-3">Key Features</a></li>
+  <li><a href="#best-practices" id="toc-best-practices" class="nav-link" data-scroll-target="#best-practices">Best Practices</a></li>
+  </ul></li>
+  <li><a href="#containerization-and-deployment-docker" id="toc-containerization-and-deployment-docker" class="nav-link" data-scroll-target="#containerization-and-deployment-docker">7. Containerization and Deployment: Docker</a>
+  <ul class="collapse">
+  <li><a href="#description-4" id="toc-description-4" class="nav-link" data-scroll-target="#description-4">Description</a></li>
+  <li><a href="#key-features-4" id="toc-key-features-4" class="nav-link" data-scroll-target="#key-features-4">Key Features</a></li>
+  <li><a href="#mlops-integration-1" id="toc-mlops-integration-1" class="nav-link" data-scroll-target="#mlops-integration-1">MLOps Integration</a></li>
+  </ul></li>
+  <li><a href="#workflow-summary" id="toc-workflow-summary" class="nav-link" data-scroll-target="#workflow-summary">8. Workflow Summary</a></li>
+  <li><a href="#contact-information" id="toc-contact-information" class="nav-link" data-scroll-target="#contact-information">9. Contact Information</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -156,15 +158,184 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<section id="srinivasan_ai_839.create_pipeline" class="level1">
-<h1>create_pipeline</h1>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>create_pipeline(<span class="op">**</span>kwargs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Creates a data processing pipeline.</p>
-<p>This pipeline consists of a single node that preprocesses the data from the input dataset.</p>
-<p>Parameters: **kwargs: Additional keyword arguments.</p>
-<p>Returns: Pipeline: A Kedro pipeline object with the defined nodes.</p>
+<section id="mlops-card-tech-stack-for-model-development-and-deployment" class="level1">
+<h1>MLOps Card: Tech Stack for Model Development and Deployment</h1>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">1. Overview</h2>
+<p>This MLOps pipeline is designed to streamline the machine learning lifecycle from <strong>data ingestion and preprocessing</strong> through <strong>model training, evaluation, versioning, and deployment</strong>. Leveraging tools like Kedro, MLflow, Evidently, GitHub for version control, and Docker, this stack ensures reproducibility, versioning, and reliability of the deployed model.</p>
+<hr>
+</section>
+<section id="tech-stack-summary" class="level2">
+<h2 class="anchored" data-anchor-id="tech-stack-summary">2. Tech Stack Summary</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Tool</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Kedro</strong></td>
+<td>Orchestrating and managing ML pipelines</td>
+</tr>
+<tr class="even">
+<td><strong>MLflow</strong></td>
+<td>Tracking, logging, and model versioning</td>
+</tr>
+<tr class="odd">
+<td><strong>Evidently</strong></td>
+<td>Data Drift Checking</td>
+</tr>
+<tr class="even">
+<td><strong>GitHub</strong></td>
+<td>Version control for code and collaboration</td>
+</tr>
+<tr class="odd">
+<td><strong>Docker</strong></td>
+<td>Containerization for consistent environments</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="pipeline-orchestration-kedro" class="level2">
+<h2 class="anchored" data-anchor-id="pipeline-orchestration-kedro">3. Pipeline Orchestration: Kedro</h2>
+<section id="description" class="level3">
+<h3 class="anchored" data-anchor-id="description">Description</h3>
+<p>Kedro is the primary framework used for structuring machine learning workflows. It enables clear data pipeline organization, modular code development, and seamless integration with MLflow for experiment tracking.</p>
+</section>
+<section id="key-features" class="level3">
+<h3 class="anchored" data-anchor-id="key-features">Key Features</h3>
+<ul>
+<li><strong>Node and Pipeline Structure</strong>: Kedro organizes ML tasks into nodes, which are then connected as pipelines. Each node represents a single function, and pipelines can be reused for training, evaluation, and deployment.</li>
+<li><strong>Data Catalog Management</strong>: The Kedro Data Catalog ensures data consistency and proper management of input/output datasets.</li>
+<li><strong>Environment Configuration</strong>: Kedro’s <code>conf</code> directory facilitates seamless environment-based configuration (e.g., local, staging, production).</li>
+</ul>
+</section>
+<section id="mlops-integration" class="level3">
+<h3 class="anchored" data-anchor-id="mlops-integration">MLOps Integration</h3>
+<ul>
+<li><strong>Kedro with MLflow</strong>: Integrating Kedro with MLflow enables automated logging of model artifacts, metrics, and parameters for each pipeline run.</li>
+<li><strong>Docker Support</strong>: Kedro pipelines are dockerized, allowing for containerized execution, which improves consistency across development and production environments.</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="experiment-tracking-and-model-registry-mlflow" class="level2">
+<h2 class="anchored" data-anchor-id="experiment-tracking-and-model-registry-mlflow">4. Experiment Tracking and Model Registry: MLflow</h2>
+<section id="description-1" class="level3">
+<h3 class="anchored" data-anchor-id="description-1">Description</h3>
+<p>MLflow is used for experiment tracking and model versioning, enabling detailed insights into model performance, hyperparameter tuning, and version control.</p>
+</section>
+<section id="key-features-1" class="level3">
+<h3 class="anchored" data-anchor-id="key-features-1">Key Features</h3>
+<ul>
+<li><strong>Experiment Tracking</strong>: Logs metrics, parameters, and artifacts, enabling reproducibility and comparison across experiments.</li>
+<li><strong>Model Registry</strong>: Centralizes model versions and manages their lifecycle stages (e.g., <code>Staging</code>, <code>Production</code>).</li>
+<li><strong>API Integration</strong>: MLflow’s API allows seamless access to models for inference, making deployment straightforward.</li>
+</ul>
+</section>
+<section id="usage-in-pipeline" class="level3">
+<h3 class="anchored" data-anchor-id="usage-in-pipeline">Usage in Pipeline</h3>
+<ul>
+<li><strong>Automated Logging</strong>: Metrics from model training and evaluation (e.g., accuracy, AUC) are logged automatically with each pipeline run.</li>
+<li><strong>Model Versioning</strong>: The model registry ensures that only the best-performing models are promoted to production.</li>
+<li><strong>Deployment Readiness</strong>: Supports REST API deployment or integration with a CI/CD workflow for automatic staging.</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="model-performance-monitoring-evidently" class="level2">
+<h2 class="anchored" data-anchor-id="model-performance-monitoring-evidently">5. Model Performance Monitoring: Evidently</h2>
+<section id="description-2" class="level3">
+<h3 class="anchored" data-anchor-id="description-2">Description</h3>
+<p>Evidently monitors model performance and detects drift in data distributions, ensuring models remain reliable over time and under changing data conditions.</p>
+</section>
+<section id="key-features-2" class="level3">
+<h3 class="anchored" data-anchor-id="key-features-2">Key Features</h3>
+<ul>
+<li><strong>Drift Detection</strong>: Alerts on changes in data distribution or prediction performance to maintain model reliability.</li>
+<li><strong>Performance Tracking</strong>: Measures and monitors metrics such as accuracy, precision, and recall in production.</li>
+<li><strong>Dashboarding</strong>: Visualizes data and model performance trends over time, allowing stakeholders to assess model health.</li>
+</ul>
+</section>
+<section id="deployment" class="level3">
+<h3 class="anchored" data-anchor-id="deployment">Deployment</h3>
+<ul>
+<li><strong>Periodic Reports</strong>: Evidently can be configured to produce reports at regular intervals, capturing performance changes.</li>
+<li><strong>Alerts Integration</strong>: Notifications for detected drifts and outliers can be set up via Evidently to integrate with Slack or other communication tools.</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="version-control-and-collaboration-github" class="level2">
+<h2 class="anchored" data-anchor-id="version-control-and-collaboration-github">6. Version Control and Collaboration: GitHub</h2>
+<section id="description-3" class="level3">
+<h3 class="anchored" data-anchor-id="description-3">Description</h3>
+<p>GitHub manages code versioning, collaboration, and review workflows, making it easier for team members to collaborate on code and track changes.</p>
+</section>
+<section id="key-features-3" class="level3">
+<h3 class="anchored" data-anchor-id="key-features-3">Key Features</h3>
+<ul>
+<li><strong>Branching and Merging</strong>: Enables parallel workstreams, with clear history and version control across branches.</li>
+<li><strong>Pull Requests (PRs)</strong>: Facilitates code review and quality checks before merging new code into main branches.</li>
+</ul>
+</section>
+<section id="best-practices" class="level3">
+<h3 class="anchored" data-anchor-id="best-practices">Best Practices</h3>
+<ul>
+<li><strong>Commit Regularly</strong>: Regular commits with descriptive messages to track experiment evolution.</li>
+<li><strong>Code Reviews</strong>: Enforce code reviews on PRs to improve code quality and ensure adherence to project standards.</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="containerization-and-deployment-docker" class="level2">
+<h2 class="anchored" data-anchor-id="containerization-and-deployment-docker">7. Containerization and Deployment: Docker</h2>
+<section id="description-4" class="level3">
+<h3 class="anchored" data-anchor-id="description-4">Description</h3>
+<p>Docker is used to containerize the application, ensuring consistency across development, testing, and production environments.</p>
+</section>
+<section id="key-features-4" class="level3">
+<h3 class="anchored" data-anchor-id="key-features-4">Key Features</h3>
+<ul>
+<li><strong>Environment Consistency</strong>: Docker images standardize environments, eliminating discrepancies across setups.</li>
+<li><strong>Easy Deployment</strong>: Containers simplify deployment by packaging dependencies and configurations within an image.</li>
+<li><strong>Resource Isolation</strong>: Each model version or pipeline step can be run in isolated containers, enhancing security and scalability.</li>
+</ul>
+</section>
+<section id="mlops-integration-1" class="level3">
+<h3 class="anchored" data-anchor-id="mlops-integration-1">MLOps Integration</h3>
+<ul>
+<li><strong>Dockerized Kedro Pipelines</strong>: The entire Kedro pipeline runs within a Docker container, making it easier to deploy to cloud environments or Kubernetes clusters.</li>
+<li><strong>MLflow API Deployment</strong>: MLflow models can be served in a Dockerized setup, simplifying scaling for production use cases.</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="workflow-summary" class="level2">
+<h2 class="anchored" data-anchor-id="workflow-summary">8. Workflow Summary</h2>
+<ol type="1">
+<li><strong>Data Ingestion and Preprocessing</strong>: Kedro pipelines orchestrate data loading, transformation, and storage in a centralized data catalog.</li>
+<li><strong>Model Training</strong>: Model experiments are tracked in MLflow, with version control for reproducibility.</li>
+<li><strong>Evaluation and Logging</strong>: MLflow logs metrics, parameters, and model artifacts, while Evidently monitors performance and detects drift.</li>
+<li><strong>Version Control and Collaboration</strong>: GitHub manages all code, documentation, and model versioning with branching and pull request workflows.</li>
+<li><strong>Containerization</strong>: Docker images encapsulate the pipeline, making it portable across environments.</li>
+<li><strong>Deployment and Monitoring</strong>: MLflow registry manages model lifecycle stages, with Dockerized deployments, and Evidently monitors performance post-deployment.</li>
+</ol>
+<hr>
+</section>
+<section id="contact-information" class="level2">
+<h2 class="anchored" data-anchor-id="contact-information">9. Contact Information</h2>
+<p>For questions or issues related to the MLOps setup, please reach out to:</p>
+<ul>
+<li><strong>MLOps Team</strong>: Srinivasan M</li>
+<li><strong>Email</strong>: m.srinivasan@iiitb.ac.in</li>
+</ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

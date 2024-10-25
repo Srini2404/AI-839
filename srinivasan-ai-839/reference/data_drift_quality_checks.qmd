@@ -1,6 +1,8 @@
 # data_drift_quality_checks { #srinivasan_ai_839.data_drift_quality_checks }
 
-`data_drift_quality_checks(df)`
+```python
+data_drift_quality_checks(df)
+```
 
 Performs data drift quality checks on the given DataFrame and returns a plotly figure.
 
